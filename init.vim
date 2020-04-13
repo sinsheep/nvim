@@ -6,14 +6,13 @@
 
 
 "
-" author:ysx
-"
-"
+" author:ysx 
 
 
 let mapleader=" "
 syntax enable
 syntax on
+set rnu
 set number
 set cursorline
 set wrap
@@ -57,7 +56,7 @@ map sj :set splitbelow<CR>:split<CR>
 
 map <LEADER>l :vertical resize-5<cr>
 map <LEADER>j :res +5<cr>
-map <LEADER>h ::vertical resize +5<cr>
+map <LEADER>h :vertical resize +5<cr>
 map <LEADER>k :res -5<cr>
 
 
@@ -73,16 +72,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 "Plug 'terryma/vim-multiple-cursors'
-Plug 'jiangmiao/auto-pairs'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'connorholyday/vim-snazzy'
 " Track the engine.
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "------- code--------
+Plug 'dense-analysis/ale'
 Plug 'mattn/emmet-vim'
 Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
@@ -90,29 +87,29 @@ Plug 'fatih/vim-go'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'tpope/vim-commentary'
 Plug 'Yggdroot/indentLine'
-Plug 'kien/ctrlp.vim'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 call plug#end()
 colorscheme gruvbox
-let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_dark="medium"
 highlight link CocErrorSign GruvboxRed
 "colorscheme snazzy
 ""let g:solarized_termcolors=256
 "colorscheme solarized
 set background=dark
-hi Quote ctermbg=109 guifg=#83a598"
-hi Normal ctermfg=252 ctermbg=none
+" hi Quote ctermbg=109 guifg=#83a598"
+" hi Normal ctermfg=252 ctermbg=none
 "vim-airline
-"let g:airline_theme='simple'
+" let g:airline_theme='simple'
 let g:airline#extensions#tabline#enabled = 1
 nmap <leader><tab> :bn<cr>
 set ambiwidth=double
-let g:airline_powerline_fonts=1
+" let g:airline_powerline_fonts=1
 
-
+"fzf
+map <c-p> :FZF<CR>
 "markdown-preview
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
@@ -155,10 +152,6 @@ autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,l --------<Enter>
-autocmd Filetype markdown nnoremap <leader>1 :% s/\\\\\\\\\\\\/\\begin{align} /g<cr>
-autocmd Filetype markdown nnoremap <leader>3 :% s/\\begin{align}/\\\\\\\\\\\\/g<cr>
-autocmd Filetype markdown nnorema  <leader>2 :% s/---+---/\\end{align}/g<cr>
-autocmd Filetype markdown nnorema  <leader>4 :% s/\\end{align}/---+---/g<cr>
 "Sautocmd Filetype makrdown inoremap ,n <<Br>><Space><Esc>A
 "indentline
 let g:indentLine_color_term = 239 
@@ -197,8 +190,8 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 "let g:NERDTreePatternMatchHighlightFullName = 1
 "let g:webdevicons_enable_nerdtree = 1
 "let g:webdevicons_conceal_nerdtree_brackets = 1
-"let g:webdevicons_enable_airline_tabline = 1
-"let g:webdevicons_enable_airline_statusline = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
 "
 "
 "tagbar
@@ -240,7 +233,7 @@ set shortmess+=c
 " " diagnostics appear/become resolved.
 
 set signcolumn=yes
-let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator']
+let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator','coc-pairs']
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -336,6 +329,7 @@ nmap <Leader>r <Plug>(coc-translator-rv)
 
 "vim-go
 
+let g:go_def_mode = 'gopls'
 let g:go_doc_keywordprg_enabled = 0 "关闭K 进入goDoc  ，会于coc.nvim 冲突"
 let g:go_def_mapping_enabled = 0
 let g:go_template_autocreate = 0
@@ -344,7 +338,6 @@ let g:go_auto_type_info = 1
 let g:go_def_mapping_enabled = 0
 let g:go_highlight_array_whitespace_error = 1
 let g:go_highlight_build_constraints = 1
-let g:go_highlight_chan_whitespace_error = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_format_strings = 1
@@ -354,10 +347,8 @@ let g:go_highlight_functions = 1
 let g:go_highlight_generate_tags = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
-let g:go_highlight_space_tab_error = 1
 let g:go_highlight_string_spellcheck = 1
 let g:go_highlight_structs = 1
-let g:go_highlight_trailing_whitespace_error = 1
 let g:go_highlight_types = 1
 let g:go_highlight_variable_assignments = 0
 let g:go_highlight_variable_declarations = 0
@@ -391,24 +382,17 @@ let g:pymode_options_max_line_length = 120
 ""undotree
 noremap <F6> :UndotreeToggle <cr>
 
-"vim-ale
+"ale
 let g:ale_sign_column_always = 1
-" let g:ale_fix_on_save = 1
-let g:ale_set_highlights = 1
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
-"普通模式下，sp前往上一个错误或警告，sn前往下一个错误或警告
-nmap sp <Plug>(ale_previous_wrap)
-nmap sn <Plug>(ale_next_wrap)
-" <Leader>d查看错误或警告的详细信息
+let g:ale_set_highlights = 0
 nmap <Leader>d :ALEDetail<CR>
-let g:ale_linters = {
-\   'go': ['golint'],
-\   'python': ['pymodelint'],
-\}
-" set statusline=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}\ %{ALEGetStatusLine()}
-let g:loaded_python_provider = 0
-" To use the RVM "system" Ruby installation:
-"let g:ruby_host_prog = 'rvm system do neovim-ruby-host'
+let b:ale_linters = {
+			\'go':'golint',
+			\'python':'pylint'}
+let g:ale_fix_on_save = 1
+
+
+"------------------function-------------------
 map <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
@@ -416,22 +400,32 @@ func! CompileRunGcc()
 		exec "!g++ % -o %<"
 		exec "!time ./%<"
 	elseif &filetype == 'cpp'
-		exec "!g++ % -o %<"
-		exec "!time ./%<"
+		set splitbelow
+		exec "!g++ -std=c++11 % -Wall -o %<"
+		:sp
+		:res -15
+		:term ./%<
 	elseif &filetype == 'java'
 		exec "!javac %"
 		exec "!time java %<"
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
-		:!time python3 %
+		set splitbelow
+		:sp
+		:term python3 %
 	elseif &filetype == 'html'
-		exec "!firefox % &"
+		exec "!google-chrome-stable %"
 	elseif &filetype == 'markdown'
 		exec "MarkdownPreview"
-	elseif &filetype == 'vimwiki'
-		exec "MarkdownPreview"
+	elseif &filetype == 'tex'
+		silent! exec "VimtexStop"
+		silent! exec "VimtexCompile"
+	elseif &filetype == 'dart'
+		CocCommand flutter.run
 	elseif &filetype == 'go'
-		exec "!time go run %"
+		set splitbelow
+		:sp
+		:term go run .
 	endif
 endfunc
