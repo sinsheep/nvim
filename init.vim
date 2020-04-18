@@ -67,6 +67,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'luochen1990/rainbow'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
@@ -109,7 +111,11 @@ set ambiwidth=double
 " let g:airline_powerline_fonts=1
 
 "fzf
-map <c-p> :FZF<CR>
+noremap <c-p> :Files<CR>
+noremap <leader>b :Buffers<cr>
+noremap <leader>ag :Ag <cr>
+
+
 "markdown-preview
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 1
@@ -152,7 +158,8 @@ autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown inoremap ,l --------<Enter>
-"Sautocmd Filetype makrdown inoremap ,n <<Br>><Space><Esc>A
+autocmd FileType markdown setlocal spell spelllang=en_us,cjk
+"autocmd Filetype makrdown inoremap ,n <<Br>><Space><Esc>A
 "indentline
 let g:indentLine_color_term = 239 
 let g:indentLine_char = '¦'
