@@ -8,7 +8,6 @@
 "
 " author:ysx 
 
-
 let mapleader=" "
 syntax enable
 syntax on
@@ -42,11 +41,12 @@ map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
 
-"禁用方向键位
-map <UP>  <nop>
-map <down> <nop>
-map <left> <nop>
-map <right>  <nop>
+inoremap <C-l> <right>
+""禁用方向键位
+"map <UP>  <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right>  <nop>
 
 map sh :set splitright<CR>:vsplit<CR>
 
@@ -73,6 +73,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jiangmiao/auto-pairs'
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -88,7 +89,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'fatih/vim-go'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'tpope/vim-commentary'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -161,9 +162,9 @@ autocmd Filetype markdown inoremap ,l --------<Enter>
 autocmd FileType markdown setlocal spell spelllang=en_us,cjk
 "autocmd Filetype makrdown inoremap ,n <<Br>><Space><Esc>A
 "indentline
-let g:indentLine_color_term = 239 
-let g:indentLine_char = '¦'
-let g:indentLine_setConceal = 0
+" let g:indentLine_color_term = 239 
+" let g:indentLine_char = '¦'
+" let g:indentLine_setConceal = 0
 
 ""snips配置
 let g:UltiSnipsExpandTrigger="<c-e>"
@@ -174,8 +175,8 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 " nerdtree
-nmap <F3> :NERDTreeMirror<CR>
-nmap <F3> :NERDTreeToggle<CR>
+nmap <leader>nd :NERDTreeMirror<CR>
+nmap <leader>nd :NERDTreeToggle<CR>
 let g:NERDTreeIndicatorMapCustom = { 
 			\ "Modified"  : "✹",
 			\ "Staged"    : "✚",
@@ -208,7 +209,7 @@ let g:tagbar_autofocus = 1
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1
-nmap <F8> :TagbarToggle<CR>
+nmap <leader>p :TagbarToggle<CR>
 
 
 "vim-emmet
@@ -240,7 +241,7 @@ set shortmess+=c
 " " diagnostics appear/become resolved.
 
 set signcolumn=yes
-let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator','coc-pairs']
+let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator']
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -387,7 +388,7 @@ let g:pymode_options_max_line_length = 120
 "let g:pymode_lint_info_symbol = 'II'
 "let g:pymode_lint_pyflakes_symbol = 'FF'
 ""undotree
-noremap <F6> :UndotreeToggle <cr>
+noremap <leader>ut :UndotreeToggle <cr>
 
 "ale
 let g:ale_sign_column_always = 1
