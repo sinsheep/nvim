@@ -2,12 +2,10 @@
 " |  \/  \ \ / /\ \   / /_ _|  \/  |  _ \ / ___|
 " | |\/| |\ V /  \ \ / / | || |\/| | |_) | |    
 " | |  | | | |    \ V /  | || |  | |  _ <| |___ 
-" |_|  |_| |_|     \_/  |___|_|  |_|_| \_\\____|
-
+" |_|  |_| |_|     \_/  |___|_|  |_|_| \_\\____| 
 
 "
 " author:ysx 
-
 let mapleader=" "
 syntax enable
 syntax on
@@ -54,10 +52,10 @@ map sl :set nosplitright<CR>:vsplit<CR>
 map sk :set nosplitbelow<CR>:split<CR>
 map sj :set splitbelow<CR>:split<CR>
 
-map <LEADER>l :vertical resize-5<cr>
-map <LEADER>j :res +5<cr>
-map <LEADER>h :vertical resize +5<cr>
-map <LEADER>k :res -5<cr>
+noremap <right> :vertical resize-5<cr>
+noremap <down> :res +5<cr>
+noremap <left> :vertical resize +5<cr>
+noremap <up> :res -5<cr>
 
 
 
@@ -65,45 +63,48 @@ map <LEADER>k :res -5<cr>
 
 call plug#begin('~/.config/nvim/plugged')
 
-"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+"---------------dress my vim------------
 Plug 'luochen1990/rainbow'
+Plug 'ryanoasis/vim-devicons'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+" --------------awesome tool-------------
+"Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdtree'
 Plug 'mbbill/undotree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-" Track the engine.
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"------- code--------
-Plug 'dense-analysis/ale'
-Plug 'mattn/emmet-vim'
-Plug 'ap/vim-css-color'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'fatih/vim-go'
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 Plug 'tpope/vim-commentary'
 " Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
+"Plug 'terryma/vim-multiple-cursors'
+" Track the engine.
+" Plug 'SirVer/ultisnips'
+"-----------------code(auto compelte and syntax check)-------------------
+Plug 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
+Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'fatih/vim-go'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 colorscheme gruvbox
-let g:gruvbox_contrast_dark="medium"
+let g:gruvbox_contrast_dark="soft"
 highlight link CocErrorSign GruvboxRed
 "colorscheme snazzy
 ""let g:solarized_termcolors=256
 "colorscheme solarized
 set background=dark
 " hi Quote ctermbg=109 guifg=#83a598"
-" hi Normal ctermfg=252 ctermbg=none
+" hi Normal ctermfg=222 ctermbg=none
 "vim-airline
 " let g:airline_theme='simple'
 let g:airline#extensions#tabline#enabled = 1
@@ -166,12 +167,13 @@ autocmd FileType markdown setlocal spell spelllang=en_us,cjk
 " let g:indentLine_char = '¦'
 " let g:indentLine_setConceal = 0
 
+	
 ""snips配置
-let g:UltiSnipsExpandTrigger="<c-e>"
-let g:UltiSnipsJumpForwardTrigger="<c-e>"
-let g:UltiSnipsJumpBackwardTrigger="<c-n>"
-let g:UltiSnipsEditSplit="vertical"
-"let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+"let g:UltiSnipsExpandTrigger="<c-e>"
+"let g:UltiSnipsJumpForwardTrigger="<c-e>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-n>"
+"let g:UltiSnipsEditSplit="vertical"
+""let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
 
 " nerdtree
@@ -215,7 +217,7 @@ nmap <leader>p :TagbarToggle<CR>
 "vim-emmet
 let g:user_emmet_leader_key='<C-Y>'
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,template EmmetInstall
 ""rainbow
 let g:rainbow_active = 1
 
@@ -242,6 +244,20 @@ set shortmess+=c
 
 set signcolumn=yes
 let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator']
+
+imap <C-l> <Plug>(coc-snippets-expand)
+
+" Use <C-j> for select text for visual placeholder of snippet.
+vmap <C-j> <Plug>(coc-snippets-select)
+
+" Use <C-j> for jump to next placeholder, it's default of coc.nvim
+let g:coc_snippet_next = '<c-j>'
+
+" Use <C-k> for jump to previous placeholder, it's default of coc.nvim
+let g:coc_snippet_prev = '<c-k>'
+
+" Use <C-j> for both expand and jump (make expand higher priority.)
+imap <C-j> <Plug>(coc-snippets-expand-jump)
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
