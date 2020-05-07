@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/usr/share/typespeed/words'
+let g:netrw_dirhist_4='/home/ysx/go/src/leetcode/121'
+let g:netrw_dirhist_3='/home/ysx/go/src'
+let g:netrw_dirhist_2='/home/ysx/go/src/leetcode'
+let g:netrw_dirhist_1='/home/ysx/go/src/leetcode/121'
