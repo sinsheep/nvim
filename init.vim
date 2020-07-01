@@ -87,6 +87,7 @@ Plug 'godlygeek/tabular'
 " Track the engine.
 " Plug 'SirVer/ultisnips'
 "-----------------code(auto compelte and syntax check)-------------------
+Plug 'pangloss/vim-javascript'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -95,6 +96,7 @@ Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'fatih/vim-go'
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+
 call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="soft"
@@ -414,6 +416,10 @@ let b:ale_linters = {
 			\'go':'golint',
 			\'python':'pylint'}
 let g:ale_fix_on_save = 1
+
+" vim-javascript
+let g:javascript_plugin_jsdoc = 1
+
 
 
 "------------------function-------------------
