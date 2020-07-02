@@ -83,11 +83,13 @@ Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-repeat'
 "Plug 'terryma/vim-multiple-cursors'
 " Track the engine.
 " Plug 'SirVer/ultisnips'
 "-----------------code(auto compelte and syntax check)-------------------
 Plug 'pangloss/vim-javascript'
+Plug 'turbio/bracey.vim'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -245,7 +247,7 @@ set shortmess+=c
 " " diagnostics appear/become resolved.
 
 set signcolumn=yes
-let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator']
+let g:coc_global_extensions =['coc-python','coc-json','coc-highlight','coc-html','coc-css','coc-lists','coc-vimlsp','coc-translator', 'coc-tsserver']
 
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -410,7 +412,7 @@ noremap <leader>ut :UndotreeToggle <cr>
 
 "ale
 let g:ale_sign_column_always = 1
-let g:ale_set_highlights = 0
+let g:ale_set_highlights = 1
 nmap <Leader>d :ALEDetail<CR>
 let b:ale_linters = {
 			\'go':'golint',
