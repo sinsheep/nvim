@@ -25,6 +25,7 @@ set smartcase
 set scrolloff=10
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set autoindent
 " set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
@@ -79,6 +80,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 " Plug 'Yggdroot/indentLine'
+Plug 'nathanaelkane/vim-indent-guides'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
@@ -170,6 +172,7 @@ autocmd FileType markdown setlocal spell spelllang=en_us,cjk
 " let g:indentLine_color_term = 239 
 " let g:indentLine_char = '¦'
 " let g:indentLine_setConceal = 0
+" let g:indentLine_showFirstIndentLevel = 1
 
 	
 ""snips配置
