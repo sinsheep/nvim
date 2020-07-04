@@ -92,6 +92,8 @@ Plug 'tpope/vim-repeat'
 "-----------------code(auto compelte and syntax check)-------------------
 Plug 'pangloss/vim-javascript'
 Plug 'turbio/bracey.vim'
+" Plug 'othree/html5.vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -425,6 +427,8 @@ let g:ale_fix_on_save = 1
 " vim-javascript
 let g:javascript_plugin_jsdoc = 1
 
+"vim-polyglot 
+let g:polyglot_disabled = ['javascript']
 
 
 "------------------function-------------------
@@ -450,7 +454,8 @@ func! CompileRunGcc()
 		:sp
 		:term python3 %
 	elseif &filetype == 'html'
-		exec "!google-chrome-stable %"
+        exec "Bracey"
+		" exec "!google-chrome-stable %"
 	elseif &filetype == 'markdown'
 		exec "MarkdownPreview"
 	elseif &filetype == 'tex'
