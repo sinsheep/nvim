@@ -93,7 +93,7 @@ Plug 'tpope/vim-repeat'
 Plug 'pangloss/vim-javascript'
 Plug 'turbio/bracey.vim'
 " Plug 'othree/html5.vim'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale'
@@ -428,7 +428,7 @@ let g:ale_fix_on_save = 1
 let g:javascript_plugin_jsdoc = 1
 
 "vim-polyglot 
-let g:polyglot_disabled = ['javascript']
+" let g:polyglot_disabled = ['javascript']
 
 
 "------------------function-------------------
