@@ -71,6 +71,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " --------------awesome tool-------------
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -430,6 +431,8 @@ let g:javascript_plugin_jsdoc = 1
 "vim-polyglot 
 " let g:polyglot_disabled = ['javascript']
 
+" bracey
+" let g:bracey_eval_on_save = 1
 
 "------------------function-------------------
 map <F5> :call CompileRunGcc()<CR>
