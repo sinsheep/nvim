@@ -69,6 +69,7 @@ Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
 " --------------awesome tool-------------
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'voldikss/vim-floaterm'
