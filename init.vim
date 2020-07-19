@@ -30,7 +30,6 @@ set autoindent
 " set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
-
 inoremap jk <esc>
 map Q :q<CR>
 
@@ -81,6 +80,7 @@ Plug 'mbbill/undotree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
+Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'Yggdroot/indentLine'
 Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-surround'
@@ -433,6 +433,13 @@ let g:javascript_plugin_jsdoc = 1
 
 " bracey
 " let g:bracey_eval_on_save = 1
+
+"vim-indent-guides
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_auto_colors = 0
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white ctermbg=white
+" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
 
 "------------------function-------------------
 map <F5> :call CompileRunGcc()<CR>
