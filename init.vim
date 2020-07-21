@@ -39,7 +39,6 @@ map Q :q<CR>
 map R :source $MYVIMRC<CR>
 
 
-inoremap <C-l> <right>
 ""禁用方向键位
 "map <UP>  <nop>
 "map <down> <nop>
