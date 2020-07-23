@@ -419,6 +419,7 @@ noremap <leader>ut :UndotreeToggle <cr>
 let g:ale_sign_column_always = 1
 let g:ale_set_highlights = 1
 nmap <Leader>d :ALEDetail<CR>
+let g:airline#extensions#ale#enabled = 1
 let b:ale_linters = {
 			\'go':'golint',
 			\'python':'pylint'}
@@ -432,7 +433,6 @@ let g:javascript_plugin_jsdoc = 1
 
 " bracey
 " let g:bracey_eval_on_save = 1
-
 "vim-indent-guides
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
