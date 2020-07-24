@@ -426,7 +426,7 @@ let b:ale_linters = {
 let g:ale_fix_on_save = 1
 
 " vim-javascript
-let g:javascript_plugin_jsdoc = 1
+" let g:javascript_plugin_jsdoc = 1
 
 "vim-polyglot 
 " let g:polyglot_disabled = ['javascript']
