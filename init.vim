@@ -425,6 +425,9 @@ let b:ale_linters = {
 			\'python':'pylint'}
 let g:ale_fix_on_save = 1
 
+let b:ale_fixers = {
+            \'javascript': ['eslint','js-beautify'],
+            \'html':['html-beautify']}
 " vim-javascript
 " let g:javascript_plugin_jsdoc = 1
 
