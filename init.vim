@@ -422,11 +422,12 @@ nmap <Leader>d :ALEDetail<CR>
 let g:airline#extensions#ale#enabled = 1
 let b:ale_linters = {
 			\'go':'golint',
-			\'python':'pylint'}
+			\'python':'pylint',
+            \'javascript':'eslint'}
 let g:ale_fix_on_save = 1
 
 let b:ale_fixers = {
-            \'javascript': ['eslint','js-beautify'],
+            \'javascript': ['eslint'],
             \'html':['html-beautify']}
 " vim-javascript
 " let g:javascript_plugin_jsdoc = 1
