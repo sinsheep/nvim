@@ -70,6 +70,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 " --------------awesome tool-------------
 "Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'puremourning/vimspector'
 Plug 'voldikss/vim-floaterm'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -444,8 +445,14 @@ let g:indent_guides_auto_colors = 0
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white ctermbg=white
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
 
+"vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+
+
+
+
 "------------------function-------------------
-map <F5> :call CompileRunGcc()<CR>
+map <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
