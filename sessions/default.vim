@@ -2,19 +2,17 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/myCode/clang
+cd ~/myCode/pythonDemo/spider/ojspider/tojacm/toj题目
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 demo.cpp
+badd +0 /tmp/tmp3g0z1fx8
 argglobal
 %argdel
-$argadd demo.cpp
-edit demo.cpp
+$argadd /tmp/tmp3g0z1fx8
+edit /tmp/tmp3g0z1fx8
 set splitbelow splitright
-set nosplitbelow
-set nosplitright
 wincmd t
 set winminheight=0
 set winheight=1
@@ -30,11 +28,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 15 - ((14 * winheight(0) + 25) / 51)
+let s:l = 3 - ((2 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-15
+3
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
