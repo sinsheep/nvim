@@ -66,7 +66,6 @@ noremap <c-up> :res -5<cr>
 call plug#begin('~/.config/nvim/plugged')
 
 "---------------dress my vim------------
-Plug 'luochen1990/rainbow'
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'vim-airline/vim-airline'
@@ -88,6 +87,11 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
+"-----------------highlight----------------------------
+Plug 'luochen1990/rainbow'
+" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+"-----------------find && place -----------------------------
+Plug 'brooth/far.vim'
 "-----------------code(auto compelte and syntax check)-------------------
 Plug 'pangloss/vim-javascript'
 Plug 'turbio/bracey.vim',{'for': ['html' ,'vim-plug']}
@@ -105,8 +109,8 @@ call plug#end()
 colorscheme gruvbox
 let g:gruvbox_contrast_dark="soft"
 highlight link CocErrorSign GruvboxRed
-"colorscheme snazzy
-""let g:solarized_termcolors=256
+" colorscheme snazzy
+"let g:solarized_termcolors=256
 "colorscheme solarized
 set background=dark
 " hi Quote ctermbg=109 guifg=#83a598"
@@ -255,7 +259,8 @@ let g:coc_global_extensions =[
             \, 'coc-tsserver'
             \,'coc-explorer'
             \,'coc-yank'
-            \,'coc-actions']
+            \,'coc-actions'
+            \,'coc-snippets']
 
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -505,6 +510,7 @@ vnoremap Y "+y
 " ===
 hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
+
 
 "------------------function-------------------
 map <leader>R :call CompileRunGcc()<CR>
