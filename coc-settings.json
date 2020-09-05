@@ -8,7 +8,6 @@
     "coc.source.buffer.firstMatch": false,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
-    "suggest.detailMaxLength": 60,
     "suggest.completionItemKindLabels": {
         "class": "\uf0e8",
         "color": "\ue22b",
@@ -36,6 +35,7 @@
         "value": "\uf89f",
         "variable": "\ue71b"
     },
+    "suggest.detailMaxLength": 60,
     "html.suggest.html5": true,
     "html.format.enable": true,
     "html.validate.scripts": true,

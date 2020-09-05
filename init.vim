@@ -33,7 +33,6 @@ set autoindent
 " set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
-inoremap jk <esc>
 map Q :q<CR>
 
 map s <nop>
@@ -132,6 +131,7 @@ set ambiwidth=double
 noremap <c-p> :Files<CR>
 noremap <leader>b :Buffers<cr>
 noremap <leader>ag :Ag <cr>
+let g:fzf_preview_window = 'right:60%'
 
 " ===
 " === markdown-preview
