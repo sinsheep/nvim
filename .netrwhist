@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/ysx/awsometool/st-0.8.2/.ccls-cache/@@home@ysx@awsometool@st-0.8.2'
 let g:netrw_dirhist_6='/home/ysx/blog'
 let g:netrw_dirhist_5='/usr/share/typespeed/words'
 let g:netrw_dirhist_4='/home/ysx/go/src/leetcode/121'

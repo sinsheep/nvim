@@ -35,10 +35,14 @@ set autoindent
 noremap <LEADER><CR> :nohlsearch<CR>
 map Q :q<CR>
 
+" Open the vimrc file anytime
+noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
+
 map s <nop>
 map S :w<CR>
 map Q :q<CR>
 map R :source $MYVIMRC<CR>
+
 
 
 ""禁用方向键位
@@ -76,7 +80,8 @@ Plug 'liuchengxu/vista.vim'
 Plug 'chiel92/vim-autoformat'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 Plug 'voldikss/vim-floaterm'
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
@@ -121,7 +126,6 @@ set background=dark
 
 " let g:airline_theme='simple'
 let g:airline#extensions#tabline#enabled = 1
-nmap <leader><tab> :bn<cr>
 " set ambiwidth=double
 " let g:airline_powerline_fonts=1
 
@@ -511,7 +515,35 @@ vnoremap Y "+y
 hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
 
+"===
+"=== tab management
+"===
+noremap tu :tabe<CR>
+" Move around tabs with tn and ti
+noremap tn :-tabnext<CR>
+noremap ti :+tabnext<CR>
+" Move the tabs with tmn and tmi
+noremap tmn :-tabmove<CR>
+noremap tmi :+tabmove<CR>
+noremap <LEADER>q <C-w>j:q<CR>
 
+"===
+"=== gitgutter
+"===
+let g:gitgutter_sign_allow_clobber = 0
+let g:gitgutter_map_keys = 0
+let g:gitgutter_override_sign_column_highlight = 0
+let g:gitgutter_preview_win_floating = 1
+let g:gitgutter_sign_added = '▎'
+let g:gitgutter_sign_modified = '░'
+let g:gitgutter_sign_removed = '▏'
+let g:gitgutter_sign_removed_first_line = '▔'
+let g:gitgutter_sign_modified_removed = '▒'
+" autocmd BufWritePost * GitGutter
+nnoremap <LEADER>gf :GitGutterFold<CR>
+nnoremap \h :GitGutterPreviewHunk<CR>
+nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
+nnoremap <LEADER>g= :GitGutterNextHunk<CR>
 "------------------function-------------------
 map <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
