@@ -76,7 +76,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 " --------------awesome tool-------------
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 Plug 'voldikss/vim-floaterm'
