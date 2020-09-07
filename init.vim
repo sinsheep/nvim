@@ -76,6 +76,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 " --------------awesome tool-------------
+Plug 'terryma/vim-multiple-cursors'
 Plug 'liuchengxu/vista.vim'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 Plug 'voldikss/vim-floaterm'
@@ -543,8 +544,10 @@ let g:gitgutter_sign_modified_removed = '▒'
 " autocmd BufWritePost * GitGutter
 nnoremap <LEADER>gf :GitGutterFold<CR>
 nnoremap \h :GitGutterPreviewHunk<CR>
-nnoremap <LEADER>g- :GitGutterPrevHunk<CR>
-nnoremap <LEADER>g= :GitGutterNextHunk<CR>
+nnoremap [h :GitGutterPrevHunk<CR>
+nnoremap ]h :GitGutterNextHunk<CR>
+nmap <leader>hs <Plug>(GitGutterStageHunk)
+nmap <leader>hu <Plug>(GitGutterUndoHunk)
 "------------------function-------------------
 map <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()

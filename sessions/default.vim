@@ -7,11 +7,11 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +587 .config/nvim/init.vim
-badd +1 .config/nvim/coc-settings.json
+badd +7 test.txt
+badd +79 .config/nvim/init.vim
 argglobal
 %argdel
-$argadd .config/nvim/init.vim
+$argadd test.txt
 edit .config/nvim/init.vim
 set splitbelow splitright
 wincmd t
@@ -29,11 +29,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 587 - ((55 * winheight(0) + 28) / 56)
+let s:l = 79 - ((27 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-587
+79
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
