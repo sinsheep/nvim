@@ -57,11 +57,15 @@ map sl :set nosplitright<CR>:vsplit<CR>
 map sk :set nosplitbelow<CR>:split<CR>
 map sj :set splitbelow<CR>:split<CR>
 
-noremap <c-right> :vertical resize-5<cr>
-noremap <c-down> :res +5<cr>
-noremap <c-left> :vertical resize +5<cr>
-noremap <c-up> :res -5<cr>
+" noremap <c-right> :vertical resize-5<cr>
+" noremap <c-down> :res +5<cr>
+" noremap <c-left> :vertical resize +5<cr>
+" noremap <c-up> :res -5<cr>
 
+noremap <up> :res +5<CR>
+noremap <down> :res -5<CR>
+noremap <left> :vertical resize-5<CR>
+noremap <right> :vertical resize+5<CR>
 
 
 
