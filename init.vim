@@ -77,23 +77,24 @@ Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 " --------------awesome tool-------------
 Plug 'liuchengxu/vista.vim'
-Plug 'chiel92/vim-autoformat'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 Plug 'voldikss/vim-floaterm'
 " Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'godlygeek/tabular'
 Plug 'tpope/vim-repeat'
+"-----------------editEnhancement----------------------------
+Plug 'tpope/vim-surround'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
+Plug 'chiel92/vim-autoformat'
+Plug 'jiangmiao/auto-pairs' 
+"-----------------gitTools----------------------------
+Plug 'airblade/vim-gitgutter'
 "-----------------highlight----------------------------
 Plug 'luochen1990/rainbow'
-" Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
 "-----------------code(auto compelte and syntax check)-------------------
