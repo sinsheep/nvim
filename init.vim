@@ -38,10 +38,10 @@ map Q :q<CR>
 " Open the vimrc file anytime
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
-map s <nop>
-map S :w<CR>
-map Q :q<CR>
-map R :source $MYVIMRC<CR>
+nmap s <nop>
+nmap S :w<CR>
+nmap Q :q<CR>
+nmap R :source $MYVIMRC<CR>
 
 
 
@@ -520,6 +520,7 @@ vnoremap Y "+y
 " ===
 hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
+let g:floaterm_keymap_new = '<Leader>fn'
 
 "===
 "=== tab management
