@@ -110,7 +110,6 @@ Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 "-----------------editEnhancement----------------------------
@@ -543,9 +542,8 @@ vnoremap Y "+y
 " ===
 hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
-" let g:floaterm_keymap_new = '\ft'
-
-
+let g:floaterm_keymap_new = '<F1>'
+let g:floaterm_keymap_next   = '<F2>'
 "===
 "=== tab management
 "===
