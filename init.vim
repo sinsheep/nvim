@@ -72,7 +72,7 @@ noremap <m-right> :vertical resize+5<CR>
 
 " terminal behaviors
 let g:neoterm_autoscroll = 1
-autocmd termopen term://* startinsert
+autocmd termopen term: startinsert
 tnoremap <c-n> <c-\><c-n>
 tnoremap <C-O> <C-\><C-N><C-O>
 let g:terminal_color_0  = '#000000'
@@ -514,7 +514,17 @@ let g:indent_guides_auto_colors = 0
 
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
-
+function! s:read_template_into_buffer(template)
+	" has to be a function to avoid the extra space fzf#run insers otherwise
+	execute '0r ~/.config/nvim/sample_vimspector_json/'.a:template
+endfunction
+command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
+			\   'source': 'ls -1 ~/.config/nvim/sample_vimspector_json',
+			\   'down': 20,
+			\   'sink': function('<sid>read_template_into_buffer')
+			\ })
+noremap <leader>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
+noremap <leader>dr :VimspectorReset<cr>
 " ===
 " === vim-autoformate
 " ===
@@ -580,13 +590,13 @@ map <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
-        exec "!g++ -Wall % -o %<"
+        exec "!g++ -Wall % -ggdb -o %<"
         :sp
         :res -15
         :term ./%<
     elseif &filetype == 'cpp'
         set splitbelow
-        exec "!g++ -std=c++11 % -Wall -o %<"
+        exec "!g++ -std=c++11 % -Wall -ggdb -o %<"
         :sp
         :res -15
         :term ./%<
