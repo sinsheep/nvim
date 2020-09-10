@@ -2,24 +2,23 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/.config/nvim
+cd ~/myCode/clang/acm/tzoj
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +112 ~/.config/nvim/init.vim
+badd +26 ~/myCode/clang/acm/tzoj/1068.c
+badd +0 term:///home/ysx/myCode/clang/acm/tzoj//11913:/bin/sh
 argglobal
 %argdel
-$argadd init.vim
-edit ~/.config/nvim/init.vim
+$argadd 1068.c
+edit ~/myCode/clang/acm/tzoj/1068.c
 set splitbelow splitright
 wincmd t
 set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe '2resize ' . ((&lines * 1 + 27) / 55)
-exe 'vert 2resize ' . ((&columns * 29 + 106) / 213)
 argglobal
 setlocal fdm=manual
 setlocal fde=0
@@ -30,27 +29,12 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 112 - ((25 * winheight(0) + 26) / 52)
+let s:l = 18 - ((17 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-112
+18
 normal! 0
-wincmd w
-argglobal
-enew
-file gitgutter://hunk-preview
-setlocal fdm=manual
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal fen
-wincmd w
-exe '2resize ' . ((&lines * 1 + 27) / 55)
-exe 'vert 2resize ' . ((&columns * 29 + 106) / 213)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

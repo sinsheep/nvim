@@ -554,6 +554,8 @@ hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
 let g:floaterm_keymap_new = '<F1>'
 let g:floaterm_keymap_next   = '<F2>'
+nmap <leader>ft :FloatermToggle<cr>
+nmap <leader>fc :FloatermKill<cr>
 "===
 "=== tab management
 "===
