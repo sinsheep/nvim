@@ -7,8 +7,8 @@
 " author:ysx
 let mapleader=" "
 set autochdir
-syntax enable
 syntax on
+syntax enable
 set rnu
 set number
 set cursorline
@@ -31,7 +31,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
-" set t_Co=256
+set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
 
@@ -92,6 +92,7 @@ let g:terminal_color_13 = '#FF92D0'
 let g:terminal_color_14 = '#9AEDFE'
 
 
+
 call plug#begin('~/.config/nvim/plugged')
 
 "---------------dress my vim------------
@@ -101,6 +102,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
+" Plug 'sheerun/vim-polyglot'
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
@@ -117,7 +119,7 @@ Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'chiel92/vim-autoformat'
-Plug 'jiangmiao/auto-pairs' 
+Plug 'jiangmiao/auto-pairs'
 "-----------------gitTools----------------------------
 Plug 'airblade/vim-gitgutter'
 "-----------------highlight----------------------------
@@ -135,24 +137,33 @@ Plug 'ap/vim-css-color',{ 'for': ['vim-plug','css','html'] }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
+Plug 'morhetz/gruvbox'
 "----------------python------------------
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
+
+
+"===
+"=== colorscheme
+"===
 colorscheme gruvbox
-let g:gruvbox_contrast_dark="soft"
 highlight link CocErrorSign GruvboxRed
-" colorscheme snazzy
-"let g:solarized_termcolors=256
-"colorscheme solarized
+let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_light="soft"
 set background=dark
+" let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"
 " hi Normal ctermfg=222 ctermbg=none
+
+"===
+"=== highlight-set
+"===
 
 " ===
 " === vim-airline
 " ===
 
-" let g:airline_theme='simple'
+let g:airline_theme='dark_minimal'
 let g:airline#extensions#tabline#enabled = 1
 " set ambiwidth=double
 " let g:airline_powerline_fonts=1
@@ -163,7 +174,7 @@ let g:airline#extensions#tabline#enabled = 1
 noremap <c-p> :Files<CR>
 noremap <leader>b :Buffers<cr>
 noremap <leader>ag :Ag <cr>
-let g:fzf_preview_window = 'right:60%'
+let g:fzf_preview_window = 'right:50%'
 
 " ===
 " === markdown-preview
@@ -193,30 +204,13 @@ let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
-" markdown 快捷键
-autocmd Filetype markdown inoremap ,f <Esc>/<++><CR>:nohlsearch<CR>c4l
-autocmd Filetype markdown inoremap ,n ---<Enter><Enter>
-autocmd Filetype markdown inoremap ,b **** <++><Esc>F*hi
-autocmd Filetype markdown inoremap ,s ~~~~ <++><Esc>F~hi
-autocmd Filetype markdown inoremap ,i ** <++><Esc>F*i
-autocmd Filetype markdown inoremap ,d `` <++><Esc>F`i
-autocmd Filetype markdown inoremap ,c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-autocmd filetype markdown inoremap ,m $$<Enter><enter>$$ <Esc>ki<tab>
-autocmd Filetype markdown inoremap ,h ====<Space><++><Esc>F=hi
-autocmd Filetype markdown inoremap ,p ![](<++>) <++><Esc>F[a
-autocmd Filetype markdown inoremap ,a [](<++>) <++><Esc>F[a
-autocmd Filetype markdown inoremap ,1 #<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,2 ##<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,3 ###<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,4 ####<Space><Enter><++><Esc>kA
-autocmd Filetype markdown inoremap ,l --------<Enter>
-autocmd FileType markdown setlocal spell spelllang=en_us,cjk
 
+source ~/.config/nvim/md-snippets.vim
 
 " ===
 " === vista.vim
 " ===
-noremap <LEADER>v :Vista coc<CR>
+noremap tg :Vista coc<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 let g:vista_default_executive = 'ctags'
@@ -224,8 +218,8 @@ let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
             \   "function": "\uf794",
-            \   "variable": "\uf71b",
-            \  }
+            \   "variable": "\uf71b" 
+            \}
 
 " ===
 " === tagbar
@@ -367,17 +361,17 @@ nmap <leader>f  <Plug>(cnc-format-selected)
 "coc-explorer
 nmap tt :CocCommand explorer<CR>
 augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+    autocmd!
+    " Setup formatexpr specified filetype(s).
+    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+    " Update signature help on jump placeholder.
+    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 function! s:cocActionsOpenFromSelected(type) abort
-  execute 'CocCommand actions.open ' . a:type
+    execute 'CocCommand actions.open ' . a:type
 endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
@@ -515,14 +509,14 @@ let g:indent_guides_auto_colors = 0
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
-	" has to be a function to avoid the extra space fzf#run insers otherwise
-	execute '0r ~/.config/nvim/sample_vimspector_json/'.a:template
+    " has to be a function to avoid the extra space fzf#run insers otherwise
+    execute '0r ~/.config/nvim/sample_vimspector_json/'.a:template
 endfunction
 command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
-			\   'source': 'ls -1 ~/.config/nvim/sample_vimspector_json',
-			\   'down': 20,
-			\   'sink': function('<sid>read_template_into_buffer')
-			\ })
+            \   'source': 'ls -1 ~/.config/nvim/sample_vimspector_json',
+            \   'down': 20,
+            \   'sink': function('<sid>read_template_into_buffer')
+            \ })
 noremap <leader>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 noremap <leader>dr :VimspectorReset<cr>
 " ===
