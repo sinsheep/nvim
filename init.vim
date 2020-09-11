@@ -146,11 +146,13 @@ call plug#end()
 "===
 "=== colorscheme
 "===
-colorscheme gruvbox
+colors gruvbox
 highlight link CocErrorSign GruvboxRed
 let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_contrast_light="soft"
 set background=dark
+set termguicolors " enable true colors support
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"
 " hi Normal ctermfg=222 ctermbg=none
@@ -282,7 +284,7 @@ let g:coc_global_extensions =[
             \,'coc-lists'
             \,'coc-vimlsp'
             \,'coc-translator'
-            \, 'coc-tsserver'
+            \,'coc-tsserver'
             \,'coc-explorer'
             \,'coc-yank'
             \,'coc-actions'
@@ -350,6 +352,8 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+hi  CursorColumn  ctermfg=222
+
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
