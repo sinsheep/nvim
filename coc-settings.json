@@ -1,9 +1,9 @@
 {
     "coc.preferences.colorSupport": true,
-    "coc.preferences.hoverTarget": "preview",
     "coc.preferences.enableFloatHighlight": true,
     "coc.preferences.snippetStatusText": "Ⓢ ",
     "coc.preferences.extensionUpdateCheck": "daily",
+    "coc.preferences.hoverTarget": "float",
     "coc.preferences.messageLevel": "error",
     "coc.source.around.firstMatch": false,
     "coc.source.buffer.firstMatch": false,
@@ -36,12 +36,19 @@
         "value": "\uf89f",
         "variable": "\ue71b"
     },
-    "suggest.detailMaxLength": 60,
     "html.suggest.html5": true,
     "html.format.enable": true,
     "html.validate.scripts": true,
     "html.validate.styles": true,
     "html.autoClosingTags": true,
+    "python.autoComplete.addBrackets": true,
+    "python.formatting.provider": "autopep8",
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.formatting.yapfArgs": [
+        "--style",
+        "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
+    ],
     "snippets.ultisnips.directories": [
         "$HOME/.config/nvim/plugged/vim-snippets/snippets",
         "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"

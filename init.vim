@@ -28,13 +28,25 @@ set ignorecase
 set smartcase
 set scrolloff=10
 set tabstop=4
+set ttyfast "should make scrolling faster"
+set updatetime=100
 set shiftwidth=4
 set expandtab
 set autoindent
-set t_Co=256
+set hidden
+set nobackup
+set nowritebackup
+set visualbell
+" set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
+" set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
 
+"open file on last line
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 " Open the vimrc file anytime
 noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 
@@ -52,15 +64,9 @@ nmap R :source $MYVIMRC<CR>
 "map <right>  <nop>
 
 map sh :set splitright<CR>:vsplit<CR>
-
 map sl :set nosplitright<CR>:vsplit<CR>
 map sk :set nosplitbelow<CR>:split<CR>
 map sj :set splitbelow<CR>:split<CR>
-
-" noremap <c-right> :vertical resize-5<cr>
-" noremap <c-down> :res +5<cr>
-" noremap <c-left> :vertical resize +5<cr>
-" noremap <c-up> :res -5<cr>
 
 noremap <m-up> :res +5<CR>
 noremap <m-down> :res -5<CR>
@@ -140,7 +146,6 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
 Plug 'morhetz/gruvbox'
 "----------------python------------------
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 call plug#end()
 
 
@@ -170,10 +175,10 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " \   'foregroundfull'
 " \ ]
 let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
+
 " ===
 " === vim-airline
 " ===
-
 let g:airline_theme='dark_minimal'
 let g:airline#extensions#tabline#enabled = 1
 " set ambiwidth=double
@@ -215,7 +220,7 @@ let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 let g:mkdp_port = ''
 let g:mkdp_page_title = '「${name}」'
-
+"md-snippets
 source ~/.config/nvim/md-snippets.vim
 
 " ===
@@ -229,7 +234,7 @@ let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
             \   "function": "\uf794",
-            \   "variable": "\uf71b" 
+            \   "variable": "\uf71b"
             \}
 
 " ===
@@ -263,27 +268,6 @@ let g:rainbow_active = 1
 " === coc.nvim
 " ===
 
-" TextEdit might fail if hidden is not set.
-set hidden
-
-" " Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
-
-" " Give more space for displaying messages.
-" set cmdheight=2
-
-" " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" " delays and poor user experience.
-set updatetime=300
-
-" " Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" " Always show the signcolumn, otherwise it would shift the text each time
-" " diagnostics appear/become resolved.
-
-set signcolumn=yes
 let g:coc_global_extensions =[
             \'coc-python'
             \,'coc-json'
@@ -371,6 +355,7 @@ nmap <leader>rn <Plug>(coc-rename)
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(cnc-format-selected)
 
+
 "coc-explorer
 nmap tt :CocCommand explorer<CR>
 augroup mygroup
@@ -400,7 +385,6 @@ xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
 
-
 nmap <Leader>t <Plug>(coc-translator-p)
 vmap <Leader>t <Plug>(coc-translator-pv)
 
@@ -409,6 +393,8 @@ nnoremap <silent><nowait> \a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <leader>l  :<C-u>CocList<cr>
 nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " ===
 " === vim-go
@@ -451,18 +437,18 @@ nmap ss <Plug>(easymotion-s2)
 " === python-mode
 " ===
 
-let g:pymode_syntax= 1
-let g:pymode_python = 'python3'
-let g:pymode_trim_whitespaces = 1
-let g:pymode_doc= 0
-"let g:pymode_doc_bind = 'K'
-" let g:pymode_rope = 1
-let g:pymode_rope_goto_definition_bind = "<C-[>"
-let g:pymode_lint = 1
-let g:pymode_indent = 1
-let g:pymode_lint_checkers = ['pyflakes', 'pep8']    ", 'mccabe', 'pylint']
-let g:pymode_options_max_line_length = 120
-"let g:pymode_lint_on_write = 0
+"let g:pymode_syntax= 1
+"let g:pymode_python = 'python3'
+"let g:pymode_trim_whitespaces = 1
+"let g:pymode_doc= 0
+""let g:pymode_doc_bind = 'K'
+"" let g:pymode_rope = 1
+"let g:pymode_rope_goto_definition_bind = "<C-[>"
+"let g:pymode_lint = 1
+"let g:pymode_indent = 1
+"let g:pymode_lint_checkers = ['pyflakes', 'pep8']    ", 'mccabe', 'pylint']
+"let g:pymode_options_max_line_length = 120
+" let g:pymode_lint_on_write = 1
 ""let g:pymode_rope = 1
 "let g:pymode_lint_on_fly = 0
 "let g:pymode_lint_cwindow = 0
@@ -595,6 +581,7 @@ nnoremap [h :GitGutterPrevHunk<CR>
 nnoremap ]h :GitGutterNextHunk<CR>
 nmap <leader>hs <Plug>(GitGutterStageHunk)
 nmap <leader>hu <Plug>(GitGutterUndoHunk)
+
 "------------------function-------------------
 map <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
