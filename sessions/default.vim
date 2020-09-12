@@ -2,17 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/myCode/clang/acm/tzoj
+cd ~/.config/nvim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +26 ~/myCode/clang/acm/tzoj/1068.c
-badd +0 term:///home/ysx/myCode/clang/acm/tzoj//11913:/bin/sh
+badd +0 ~/.config/nvim/init.vim
 argglobal
 %argdel
-$argadd 1068.c
-edit ~/myCode/clang/acm/tzoj/1068.c
+$argadd init.vim
+edit ~/.config/nvim/init.vim
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -29,11 +28,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 18 - ((17 * winheight(0) + 28) / 56)
+let s:l = 172 - ((26 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
+172
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'

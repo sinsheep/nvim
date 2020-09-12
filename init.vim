@@ -133,7 +133,8 @@ Plug 'turbio/bracey.vim',{'for': ['html' ,'vim-plug']}
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'mattn/emmet-vim'
-Plug 'ap/vim-css-color',{ 'for': ['vim-plug','css','html'] }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+" Plug 'ap/vim-css-color',{ 'for': ['vim-plug','css','html'] }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
@@ -158,9 +159,17 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " hi Normal ctermfg=222 ctermbg=none
 
 "===
-"=== highlight-set
+"===   hexokinase
 "===
-
+" let g:Hexokinase_highlighters = [
+" \   'virtual',
+" \   'sign_column',
+" \   'background',
+" \   'backgroundfull',
+" \   'foreground',
+" \   'foregroundfull'
+" \ ]
+let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 " ===
 " === vim-airline
 " ===
