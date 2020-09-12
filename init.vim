@@ -109,8 +109,9 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'sheerun/vim-polyglot'
+Plug 'morhetz/gruvbox'
+Plug 'jackguo380/vim-lsp-cxx-highlight'
+"Plug 'sheerun/vim-polyglot'
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
@@ -146,7 +147,6 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
-Plug 'morhetz/gruvbox'
 "----------------python------------------
 call plug#end()
 
@@ -156,7 +156,7 @@ call plug#end()
 "===
 colors gruvbox
 highlight link CocErrorSign GruvboxRed
-let g:gruvbox_contrast_dark="soft"
+let g:gruvbox_contrast_dark="medium"
 let g:gruvbox_contrast_light="soft"
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1

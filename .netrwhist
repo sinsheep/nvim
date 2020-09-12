@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =8
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/home/ysx/myCode/clang/acm/tzoj'
+let g:netrw_dirhist_9='/home/ysx/myCode/clang/acm'
 let g:netrw_dirhist_8='/home/ysx/.config/nvim'
 let g:netrw_dirhist_7='/home/ysx/awsometool/st-0.8.2/.ccls-cache/@@home@ysx@awsometool@st-0.8.2'
 let g:netrw_dirhist_6='/home/ysx/blog'

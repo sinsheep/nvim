@@ -2,17 +2,16 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/myCode/pythonDemo/spider/ojspider/sxvtcacm
+cd ~/myCode/clang/acm/tzoj
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +24 ~/myCode/pythonDemo/spider/ojspider/sxvtcacm/oj.py
-badd +0 term://.//74304:python3\ oj.py
+badd +0 ~/myCode/clang/acm/tzoj/2799.c
 argglobal
 %argdel
-$argadd oj.py
-edit ~/myCode/pythonDemo/spider/ojspider/sxvtcacm/oj.py
+$argadd 2799.c
+edit ~/myCode/clang/acm/tzoj/2799.c
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -29,18 +28,18 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 49 - ((13 * winheight(0) + 16) / 32)
+let s:l = 15 - ((14 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-49
+15
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFIc
+set winheight=1 winwidth=20 winminheight=1 winminwidth=1 shortmess=filnxtToOFcI
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)
