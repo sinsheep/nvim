@@ -7,8 +7,10 @@
     "coc.preferences.messageLevel": "error",
     "coc.source.around.firstMatch": false,
     "coc.source.buffer.firstMatch": false,
+    "suggest.detailMaxLength": 20,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
+    "coc.preferences.previewMaxHeight": 12,
     "suggest.completionItemKindLabels": {
         "class": "\uf0e8",
         "color": "\ue22b",

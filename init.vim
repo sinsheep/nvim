@@ -41,6 +41,7 @@ set visualbell
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+set termguicolors " enable true colors support
 " set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -109,6 +110,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 " Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
@@ -157,7 +159,6 @@ highlight link CocErrorSign GruvboxRed
 let g:gruvbox_contrast_dark="soft"
 let g:gruvbox_contrast_light="soft"
 set background=dark
-set termguicolors " enable true colors support
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"

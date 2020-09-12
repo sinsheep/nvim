@@ -2,16 +2,17 @@ let SessionLoad = 1
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/go/src/leetcode/11-container-with-most-water
+cd ~/myCode/pythonDemo/spider/ojspider/sxvtcacm
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +0 ~/go/src/leetcode/11-container-with-most-water/11.go
+badd +24 ~/myCode/pythonDemo/spider/ojspider/sxvtcacm/oj.py
+badd +0 term://.//74304:python3\ oj.py
 argglobal
 %argdel
-$argadd 11.go
-edit ~/go/src/leetcode/11-container-with-most-water/11.go
+$argadd oj.py
+edit ~/myCode/pythonDemo/spider/ojspider/sxvtcacm/oj.py
 set splitbelow splitright
 wincmd t
 set winminheight=0
@@ -28,11 +29,11 @@ setlocal fml=1
 setlocal fdn=20
 setlocal fen
 silent! normal! zE
-let s:l = 30 - ((29 * winheight(0) + 28) / 56)
+let s:l = 49 - ((13 * winheight(0) + 16) / 32)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-30
+49
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
