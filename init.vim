@@ -130,18 +130,19 @@ Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
 Plug 'voldikss/vim-floaterm'
-" Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "-----------------editEnhancement----------------------------
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
+Plug 'honza/vim-snippets'
 "-----------------gitTools----------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -149,15 +150,13 @@ Plug 'airblade/vim-gitgutter'
 Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
-"-----------------code(auto compelte and syntax check)-------------------
+"-----------------json,html,javascript-------------------
 Plug 'pangloss/vim-javascript',{'for':[ 'javascript' ,'html']}
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
-" Plug 'othree/html5.vim'
-Plug 'honza/vim-snippets'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
-" Plug 'ap/vim-css-color',{ 'for': ['vim-plug','css','html'] }
+"----------------markdown----------------------
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
@@ -244,14 +243,26 @@ source ~/.config/nvim/md-snippets.vim
 " ===
 noremap tg :Vista coc<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+"
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:50%']
+let g:vista_executive_for = {
+			\ 'vimwiki': 'markdown',
+			\ 'pandoc': 'markdown',
+			\ 'markdown': 'toc',
+			\ 'yaml': 'coc',
+			\ 'typescript': 'coc',
+			\ 'typescriptreact': 'coc',
+			\ }
 let g:vista#renderer#enable_icon = 1
-let g:vista#renderer#icons = {
-            \   "function": "\uf794",
-            \   "variable": "\uf71b"
-            \}
+let g:vista_disable_statusline = 1
+let g:vista_default_executive = 'ctags'
+let g:vista_echo_cursor_strategy = 'floating_win'
+" let g:vista#renderer#icons = {
+"             \   "function": "\uf794",
+"             \   "variable": "\uf71b"
+"             \}
 
 " ===
 " === tagbar
