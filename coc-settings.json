@@ -43,6 +43,7 @@
     "html.validate.scripts": true,
     "html.validate.styles": true,
     "html.autoClosingTags": true,
+    "html.format.indentInnerHtml": true,
     "python.autoComplete.addBrackets": true,
     "python.formatting.provider": "autopep8",
     "python.linting.enabled": true,
@@ -52,9 +53,12 @@
         "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
     ],
     "snippets.ultisnips.directories": [
-        "$HOME/.config/nvim/plugged/vim-snippets/snippets",
-        "$HOME/.config/nvim/plugged/vim-snippets/UltiSnips"
+        //"$HOME/.config/nvim/my_snippets",
+        "$HOME/.config/nvim/plugged/vim-snippets/snippets"
     ],
+    "snippets.snipmate.author": "ysx",
+    "snippets.userSnippetsDirectory": "~/.config/nvim/my_snippets",
+    "list.previewHighlightGroup": "Statement",
     "explorer.width": 38,
     "explorer.quitOnOpen": true,
     "explorer.icon.enableNerdfont": true,

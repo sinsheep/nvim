@@ -5,6 +5,18 @@
 " |_|  |_| |_|     \_/  |___|_|  |_|_| \_\\____|
 "
 " author:ysx
+
+
+
+" ===
+" === Auto load  vim-plug for first time uses
+" ===
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 let mapleader=" "
 set autochdir
 syntax on
@@ -130,6 +142,7 @@ Plug 'tpope/vim-commentary'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 "-----------------gitTools----------------------------
+Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 "-----------------highlight----------------------------
 Plug 'luochen1990/rainbow'
@@ -183,7 +196,7 @@ let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 let g:airline_theme='dark_minimal'
 let g:airline#extensions#tabline#enabled = 1
 " set ambiwidth=double
-" let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
 
 " ===
 " === fzf.vim
@@ -495,8 +508,8 @@ noremap <leader>ut :UndotreeToggle <cr>
 " ===
 " === bracey
 " ===
-
-" let g:bracey_eval_on_save = 1
+let g:bracey_refresh_on_save=1
+let g:bracey_eval_on_save = 1
 
 " ===
 " === vim-indent-guides
@@ -574,8 +587,8 @@ let g:gitgutter_sign_added = '▎'
 let g:gitgutter_sign_modified = '░'
 let g:gitgutter_sign_removed = '▏'
 let g:gitgutter_sign_removed_first_line = '▔'
-let g:gitgutter_sign_modified_removed = '▒'
-" autocmd BufWritePost * GitGutter
+let g:Sitgutter_sign_modified_removed = '▒'
+autocmd BufWritePost * GitGutter
 nnoremap <LEADER>gf :GitGutterFold<CR>
 nnoremap \h :GitGutterPreviewHunk<CR>
 nnoremap [h :GitGutterPrevHunk<CR>
@@ -608,6 +621,7 @@ func! CompileRunGcc()
         :sp
         :term python3 %
     elseif &filetype == 'html'
+        " silent! exec "!".g:mkdp_browser." % &"
         exec "Bracey"
         " exec "!google-chrome-stable %"
     elseif &filetype == 'markdown'
