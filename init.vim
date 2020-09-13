@@ -22,6 +22,7 @@ set autochdir
 syntax on
 syntax enable
 set rnu
+set mouse=a
 set number
 set cursorline
 set wrap
@@ -122,7 +123,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 Plug 'morhetz/gruvbox'
-Plug 'jackguo380/vim-lsp-cxx-highlight'
+Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
 "Plug 'sheerun/vim-polyglot'
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
@@ -149,8 +150,8 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
 "-----------------code(auto compelte and syntax check)-------------------
-Plug 'pangloss/vim-javascript'
-Plug 'turbio/bracey.vim',{'for': ['html' ,'vim-plug']}
+Plug 'pangloss/vim-javascript',{'for':[ 'javascript' ,'html']}
+Plug 'turbio/bracey.vim',{'for': ['html' ]}
 " Plug 'othree/html5.vim'
 Plug 'honza/vim-snippets'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -173,6 +174,7 @@ let g:gruvbox_contrast_dark="medium"
 let g:gruvbox_contrast_light="soft"
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+hi pythonSelf ctermfg=174 guifg=#d3869b cterm=bold gui=bold
 " let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"
 " hi Normal ctermfg=222 ctermbg=none
