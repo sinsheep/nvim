@@ -221,14 +221,31 @@ noremap <S-Tab> :bp<CR>
 noremap <Leader><Tab> :Bw<CR>
 noremap <Leader><S-Tab> :Bw!<CR>
 noremap <C-s> :tabnew split<CR>
+
+" dracula colorscheme
 function! g:BuffetSetCustomColors()
-  hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ffff00 guifg=#000000
-  hi! BuffetBuffer cterm=NONE ctermbg=5 ctermbg=8 guifg=#FFFFFF
+  hi! BuffetCurrentBuffer    gui=NONE guibg=#50fa7b guifg=#282a36
+  hi! BuffetActiveBuffer     gui=NONE guibg=#bd93f9 guifg=#282a36
+  hi! BuffetBuffer           gui=NONE guibg=#282a36 guifg=#6272a4
+  hi! BuffetModCurrentBuffer gui=NONE guibg=#8be9fd guifg=#282a36
+  hi! BuffetModActiveBuffer  gui=NONE guibg=#ffb86c guifg=#282a36
+  hi! BuffetModBuffer        gui=NONE guibg=#ff5555 guifg=#282a36
+  hi! BuffetTrunc            gui=NONE guibg=#bd93f9 guifg=#282a36
+  hi! BuffetTab              gui=NONE guibg=#bd93f9 guifg=#282a36
 endfunction
+" function! g:BuffetSetCustomColors()
+"   hi! BuffetCurrentBuffer cterm=NONE ctermbg=5 ctermfg=8 guibg=#ffff00 guifg=#000000
+"   hi! BuffetBuffer cterm=NONE ctermbg=5 ctermbg=8 guifg=#FFFFFF
+" endfunction
+let g:buffet_show_index = 1
+let g:buffet_index_type = "index" " 
+" let g:buffet_index_type = "number" 
+" let g:buffet_show_number = 1
 let g:buffet_powerline_separators = 1
 let g:buffet_tab_icon = "\uf00a"
 let g:buffet_left_trunc_icon = "\uf0a8"
 let g:buffet_right_trunc_icon = "\uf0a9"
+
 " ===
 " === fzf.vim
 " ===
