@@ -12,49 +12,48 @@
 " === Auto load  vim-plug for first time uses
 " ===
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-	silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-				\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 let mapleader=" "
-set autochdir
-syntax on
-syntax enable
-set rnu
-set mouse=a
-set number
-set cursorline
-set wrap
-set textwidth=0
-set splitright
-set splitbelow
-set showcmd
-set wildmenu
-set hlsearch
-set noswapfile
-set encoding=UTF-8
-exec "nohlsearch"
-set incsearch
-set notimeout
-set ignorecase
-set smartcase
-set scrolloff=10
-set tabstop=4
-set ttyfast "should make scrolling faster"
-set updatetime=100
-set shiftwidth=4
-set expandtab
-set autoindent
-set hidden
-set nobackup
-set nowritebackup
-set visualbell
+" filetype on
 " set cmdheight=2
-set updatetime=300
+" syntax enable
+" syntax on
+set autochdir
+set autoindent
+set cursorline
+set encoding=UTF-8
+set expandtab
+set hidden
+set hlsearch
+set ignorecase
+set incsearch
+set mouse=a
+set nobackup
+set noswapfile
+set notimeout
+set nowritebackup
+set number
+set rnu
+set scrolloff=10
+set shiftwidth=4
 set shortmess+=c
+set showcmd
 set signcolumn=yes
+set smartcase
+set splitbelow
+set splitright
+set tabstop=4
 set termguicolors " enable true colors support
+set textwidth=0
+set updatetime=100
+set updatetime=300
+set wildmenu
+set wrap
+exec "nohlsearch"
 " set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
@@ -118,13 +117,15 @@ call plug#begin('~/.config/nvim/plugged')
 "---------------dress my vim------------
 Plug 'ryanoasis/vim-devicons'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'mhinz/vim-startify'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'liuchengxu/eleline.vim'
+Plug 'hardcoreplayers/spaceline.vim'
+Plug 'bagrat/vim-buffet'
+" Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 Plug 'morhetz/gruvbox'
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
-"Plug 'sheerun/vim-polyglot'
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
@@ -143,7 +144,7 @@ Plug 'tpope/vim-commentary'
 Plug 'chiel92/vim-autoformat'
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
-"-----------------gitTools----------------------------
+"-----------------gittools----------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 "-----------------highlight----------------------------
@@ -151,15 +152,14 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
 "-----------------json,html,javascript-------------------
-Plug 'pangloss/vim-javascript',{'for':[ 'javascript' ,'html']}
+Plug 'pangloss/vim-javascript',{'for':['javascript']}
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
-Plug 'othree/html5.vim'
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 "----------------markdown----------------------
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
-Plug 'fatih/vim-go',{'for': ['go','vim-plug']}
+Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
 call plug#end()
 
@@ -173,7 +173,6 @@ let g:gruvbox_contrast_dark="medium"
 let g:gruvbox_contrast_light="soft"
 set background=dark
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-hi pythonSelf ctermfg=174 guifg=#d3869b cterm=bold gui=bold
 " let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"
 " hi Normal ctermfg=222 ctermbg=none
@@ -194,11 +193,27 @@ let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 " ===
 " === vim-airline
 " ===
-let g:airline_theme='dark_minimal'
-let g:airline#extensions#tabline#enabled = 1
-" set ambiwidth=double
-let g:airline_powerline_fonts=1
+" let g:airline_theme='dark_minimal'
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline_powerline_fonts=1
+let g:spaceline_custom_diff_icon = ['+', '-', '~']
+let g:spaceline_diff_tool = 'git-gutter'
+" let g:spaceline_scroll_chars = ['⎺', '⎻', '⎼', '⎽', '⎯']
 
+
+"===
+"=== vim-buffet
+"===
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
 " ===
 " === fzf.vim
 " ===
@@ -247,14 +262,6 @@ noremap <c-t> :silent! Vista finder coc<CR>
 "
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:50%']
-let g:vista_executive_for = {
-			\ 'vimwiki': 'markdown',
-			\ 'pandoc': 'markdown',
-			\ 'markdown': 'toc',
-			\ 'yaml': 'coc',
-			\ 'typescript': 'coc',
-			\ 'typescriptreact': 'coc',
-			\ }
 let g:vista#renderer#enable_icon = 1
 let g:vista_disable_statusline = 1
 let g:vista_default_executive = 'ctags'
@@ -263,19 +270,6 @@ let g:vista_echo_cursor_strategy = 'floating_win'
 "             \   "function": "\uf794",
 "             \   "variable": "\uf71b"
 "             \}
-
-" ===
-" === tagbar
-" ===
-
-" let Tlist_Ctags_Cmd = '/usr/bin/ctags'
-" let g:tagbar_ctags_bin = 'ctags'
-" let g:tagbar_autofocus = 1
-" let Tlist_Show_One_File = 1
-" let Tlist_Exit_OnlyWindow = 1
-" let Tlist_Use_Right_Window = 1
-" nmap <leader>p :TagbarToggle<CR>
-
 
 " ===
 " === vim-emmet
@@ -320,11 +314,11 @@ let g:coc_snippet_next = '<c-j>'
 
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
 let g:coc_snippet_prev = '<c-k>'
-
-" Use <C-j> for both expand and jump (make expand higher priority.)
-imap <C-j> <Plug>(coc-snippets-expand-jump)
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" use <c-j> for both expand and jump (make expand higher priority.)
+imap <c-j> <Plug>(coc-snippets-expand-jump)
+xmap <leader>x  <Plug>(coc-convert-snippet)
+" use tab for trigger completion with characters ahead and navigate.
+" note: use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
@@ -460,31 +454,14 @@ let g:go_highlight_variable_declarations = 1
 
 nmap ss <Plug>(easymotion-s2)
 
-" ===
-" === python-mode
-" ===
+"===
+"=== python
+"===
 
-"let g:pymode_syntax= 1
-"let g:pymode_python = 'python3'
-"let g:pymode_trim_whitespaces = 1
-"let g:pymode_doc= 0
-""let g:pymode_doc_bind = 'K'
-"" let g:pymode_rope = 1
-"let g:pymode_rope_goto_definition_bind = "<C-[>"
-"let g:pymode_lint = 1
-"let g:pymode_indent = 1
-"let g:pymode_lint_checkers = ['pyflakes', 'pep8']    ", 'mccabe', 'pylint']
-"let g:pymode_options_max_line_length = 120
-" let g:pymode_lint_on_write = 1
-""let g:pymode_rope = 1
-"let g:pymode_lint_on_fly = 0
-"let g:pymode_lint_cwindow = 0
-"""let g:pymode_lint_todo_symbol = 'WW'
-"let g:pymode_lint_comment_symbol = 'CC'
-"let g:pymode_lint_visual_symbol = 'RR'
-"let g:pymode_lint_error_symbol = 'EE'
-"let g:pymode_lint_info_symbol = 'II'
-"let g:pymode_lint_pyflakes_symbol = 'FF'
+let g:python_host_skip_check=1
+let g:python_host_prog = '/usr/bin/python'
+let g:python3_host_skip_check=1
+let g:python3_host_prog = '/usr/bin/python3'
 
 " ===
 " === undotree
@@ -492,31 +469,11 @@ nmap ss <Plug>(easymotion-s2)
 
 noremap <leader>ut :UndotreeToggle <cr>
 
-" ===
-" === ale
-" ===
-
-" let g:airline#extensions#ale#enabled = 1
-" let b:ale_linters = {
-"           \'go':'golint',
-"           \'python':'pylint',
-"             \'javascript':'eslint'}
-" let g:ale_fix_on_save = 1
-
-" let b:ale_fixers = {
-"             \'javascript': ['eslint'],
-"             \'html':['html-beautify']}
 
 " ===
 " === vim-javascript
 " ===
 " let g:javascript_plugin_jsdoc = 1
-
-" ===
-" === vim-polyglot
-" ===
-
-" let g:polyglot_disabled = ['javascript']
 
 " ===
 " === bracey
@@ -530,8 +487,6 @@ let g:bracey_refresh_on_save=1
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=white ctermbg=white
-" autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=red ctermbg=red
 
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'

@@ -5,12 +5,21 @@
     "coc.preferences.extensionUpdateCheck": "daily",
     "coc.preferences.hoverTarget": "float",
     "coc.preferences.messageLevel": "error",
+    "coc.preferences.previewMaxHeight": 12,
+    "coc.preferences.formatOnSaveFiletypes": [
+        "javascript",
+        "html",
+        "css",
+        "json",
+        "python"
+    ],
     "coc.source.around.firstMatch": false,
     "coc.source.buffer.firstMatch": false,
     "suggest.detailMaxLength": 20,
+    "highlight.colors.enable": false,
+    "highlight.colorNames.enable": true,
     "suggest.noselect": true,
     "suggest.enablePreselect": false,
-    "coc.preferences.previewMaxHeight": 12,
     "suggest.completionItemKindLabels": {
         "keyword": "\uf1de",
         "variable": "\ue79b",
@@ -53,7 +62,6 @@
         "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
     ],
     "snippets.ultisnips.directories": [
-        //"$HOME/.config/nvim/my_snippets",
         "$HOME/.config/nvim/plugged/vim-snippets/snippets"
     ],
     "snippets.snipmate.author": "ysx",
@@ -70,13 +78,6 @@
     "diagnostic.virtualTextPrefix": " ❯❯❯ ",
     "diagnostic.virtualText": true,
     "yank.highlight.enable": true,
-    "coc.preferences.formatOnSaveFiletypes": [
-        "typescript",
-        "html",
-        "css",
-        "json",
-        "python"
-    ],
     "list.source.files.defaultOptions": [
         "--auto-preview"
     ],
@@ -112,7 +113,7 @@
                     "directory": ".ccls-cache"
                 },
                 "client": {
-                    "snippetSupport": true
+                    //                    "snippetSupport": true
                 },
                 "highlight": {
                     "lsRanges": true
