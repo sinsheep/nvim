@@ -20,8 +20,7 @@ endif
 let mapleader=" "
 " filetype on
 " set cmdheight=2
-" syntax enable
-" syntax on
+syntax on
 set autochdir
 set autoindent
 set cursorline
@@ -54,7 +53,7 @@ set updatetime=300
 set wildmenu
 set wrap
 exec "nohlsearch"
-" set t_Co=256
+set t_Co=256
 " set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
 
@@ -89,7 +88,7 @@ noremap <m-right> :vertical resize+5<CR>
 
 " terminal behaviors
 let g:neoterm_autoscroll = 1
-autocmd termopen term: startinsert
+autocmd termopen term://* startinsert
 tnoremap <c-n> <c-\><c-n>
 tnoremap <C-O> <C-\><C-N><C-O>
 let g:terminal_color_0  = '#000000'
@@ -120,6 +119,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Plug 'liuchengxu/eleline.vim'
 Plug 'hardcoreplayers/spaceline.vim'
 Plug 'bagrat/vim-buffet'
+Plug 'glepnir/dashboard-nvim'
 " Plug 'mhinz/vim-startify'
 Plug 'itchyny/calendar.vim'
 Plug 'morhetz/gruvbox'
@@ -150,7 +150,7 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
 "-----------------json,html,javascript-------------------
-Plug 'pangloss/vim-javascript',{'for':['javascript']}
+Plug 'jelera/vim-javascript-syntax'
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
 Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -159,10 +159,9 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
+Plug 'vim-python/python-syntax'
 call plug#end()
 
-
-" noremap <leader>gt 0f'vi'Y:!google-stable-chrome github.com/<c-V>
 
 "===
 "=== colorscheme
@@ -176,6 +175,21 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let g:gruvbox_hls_cursor='red'
 " hi Quote ctermbg=109 guifg=#83a598"
 " hi Normal ctermfg=222 ctermbg=none
+
+"===
+"=== dashboard
+"===
+let g:dashboard_default_executive ='fzf'
+let g:dashboard_custom_shortcut={
+  \ 'last_session'       : 'SPC s l',
+  \ 'find_history'       : 'SPC f h',
+  \ 'find_file'          : 'CTRL P',
+  \ 'new_file'           : 'SPC n f',
+  \ 'change_colorscheme' : 'SPC s c',
+  \ 'find_word'          : 'SPC f a',
+  \ 'book_marks'         : 'SPC f b',
+  \ }
+let g:dashboard_default_header='pikachu'
 
 "===
 "===   hexokinase
@@ -200,6 +214,7 @@ let g:Hexokinase_ftEnabled = ['css', 'html', 'javascript']
 " let g:airline_powerline_fonts=1
 let g:spaceline_custom_diff_icon = ['+', '-', '~']
 let g:spaceline_diff_tool = 'git-gutter'
+let g:spaceline_seperate_style= 'slant'
 " let g:spaceline_scroll_chars = ['⎺', '⎻', '⎼', '⎽', '⎯']
 
 
@@ -238,9 +253,6 @@ endfunction
 "   hi! BuffetBuffer cterm=NONE ctermbg=5 ctermbg=8 guifg=#FFFFFF
 " endfunction
 let g:buffet_show_index = 1
-let g:buffet_index_type = "index" " 
-" let g:buffet_index_type = "number" 
-" let g:buffet_show_number = 1
 let g:buffet_powerline_separators = 1
 let g:buffet_tab_icon = "\uf00a"
 let g:buffet_left_trunc_icon = "\uf0a8"
@@ -249,10 +261,18 @@ let g:buffet_right_trunc_icon = "\uf0a9"
 " ===
 " === fzf.vim
 " ===
+nmap <Leader>ss :<C-u>SessionSave<CR>
+nmap <Leader>sl :<C-u>SessionLoad<CR>
+nmap <Leader>nf :<C-u>DashboardNewFile<CR>
+nnoremap <silent> <Leader>fh :History<CR>
+nnoremap <silent> <Leader>sc :Colors<CR>
+nnoremap <silent> <Leader>fa :Rg<CR>
 noremap <c-p> :Files<CR>
 noremap <leader>b :Buffers<cr>
 noremap <leader>ag :Ag <cr>
+nnoremap <silent> <Leader>fb :Marks<CR>
 let g:fzf_preview_window = 'right:50%'
+
 
 " ===
 " === markdown-preview
@@ -405,7 +425,7 @@ hi  CursorColumn  ctermfg=222
 nmap <leader>rn <Plug>(coc-rename)
 
 " Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(cnc-format-selected)
 
 
@@ -478,7 +498,6 @@ let g:go_highlight_variable_assignments = 1
 let g:go_highlight_variable_declarations = 1
 
 
-
 " ===
 " === vim-easymotion
 " ===
@@ -499,11 +518,6 @@ noremap <leader>ut :UndotreeToggle <cr>
 
 
 " ===
-" === vim-javascript
-" ===
-" let g:javascript_plugin_jsdoc = 1
-
-" ===
 " === bracey
 " ===
 let g:bracey_refresh_on_save=1
@@ -515,6 +529,7 @@ let g:bracey_refresh_on_save=1
 let g:indent_guides_start_level = 1
 let g:indent_guides_guide_size = 1
 let g:indent_guides_auto_colors = 0
+
 
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
@@ -563,14 +578,14 @@ nmap <leader>fc :FloatermKill<cr>
 "===
 "=== tab management
 "===
-noremap tu :tabe<CR>
-" Move around tabs with tn and ti
-noremap tn :-tabnext<CR>
-noremap ti :+tabnext<CR>
-" Move the tabs with tmn and tmi
-noremap tmn :-tabmove<CR>
-noremap tmi :+tabmove<CR>
-noremap <LEADER>q <C-w>j:q<CR>
+" noremap tu :tabe<CR>
+" " Move around tabs with tn and ti
+" noremap tn :-tabnext<CR>
+" noremap ti :+tabnext<CR>
+" " Move the tabs with tmn and tmi
+" noremap tmn :-tabmove<CR>
+" noremap tmi :+tabmove<CR>
+" noremap <LEADER>q <C-w>j:q<CR>
 
 "===
 "=== gitgutter
@@ -591,6 +606,7 @@ nnoremap [h :GitGutterPrevHunk<CR>
 nnoremap ]h :GitGutterNextHunk<CR>
 nmap <leader>hs <Plug>(GitGutterStageHunk)
 nmap <leader>hu <Plug>(GitGutterUndoHunk)
+
 
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
