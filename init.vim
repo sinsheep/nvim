@@ -87,8 +87,6 @@ noremap <m-left> :vertical resize-5<CR>
 noremap <m-right> :vertical resize+5<CR>
 
 
-
-
 " terminal behaviors
 let g:neoterm_autoscroll = 1
 autocmd termopen term: startinsert
@@ -163,6 +161,8 @@ Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
 call plug#end()
 
+
+" noremap <leader>gt 0f'vi'Y:!google-stable-chrome github.com/<c-V>
 
 "===
 "=== colorscheme
@@ -452,7 +452,6 @@ nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
 " ===
 " === vim-go
 " ===
-
 let g:go_def_mode = 'gopls'
 let g:go_doc_keywordprg_enabled = 0 "关闭K 进入goDoc  ，会于coc.nvim 冲突"
 let g:go_def_mapping_enabled = 0
@@ -483,13 +482,11 @@ let g:go_highlight_variable_declarations = 1
 " ===
 " === vim-easymotion
 " ===
-
 nmap ss <Plug>(easymotion-s2)
 
 "===
 "=== python
 "===
-
 let g:python_host_skip_check=1
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_skip_check=1
@@ -498,7 +495,6 @@ let g:python3_host_prog = '/usr/bin/python3'
 " ===
 " === undotree
 " ===
-
 noremap <leader>ut :UndotreeToggle <cr>
 
 
@@ -533,10 +529,10 @@ command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
             \ })
 noremap <leader>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 noremap <leader>dr :VimspectorReset<cr>
+
 " ===
 " === vim-autoformate
 " ===
-
 noremap \f :Autoformat<CR>
 " let g:autoformat_verbosemode=1
 " au BufWrite *.html :Autoformat
@@ -552,7 +548,6 @@ nnoremap \c :Calendar<cr>
 " ===
 " === yank-key-set
 " ===
-
 vnoremap Y "+y
 
 " ===
@@ -564,6 +559,7 @@ let g:floaterm_keymap_new = '<F1>'
 let g:floaterm_keymap_next   = '<F2>'
 nmap <leader>ft :FloatermToggle<cr>
 nmap <leader>fc :FloatermKill<cr>
+
 "===
 "=== tab management
 "===
@@ -596,44 +592,5 @@ nnoremap ]h :GitGutterNextHunk<CR>
 nmap <leader>hs <Plug>(GitGutterStageHunk)
 nmap <leader>hu <Plug>(GitGutterUndoHunk)
 
-"------------------function-------------------
-map <leader>R :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-    exec "w"
-    if &filetype == 'c'
-        exec "!g++ -Wall % -ggdb -o %<"
-        :sp
-        :res -15
-        :term ./%<
-    elseif &filetype == 'cpp'
-        set splitbelow
-        exec "!g++ -std=c++11 % -Wall -ggdb -o %<"
-        :sp
-        :res -15
-        :term ./%<
-    elseif &filetype == 'java'
-        exec "!javac %"
-        exec "!time java %<"
-    elseif &filetype == 'sh'
-        :!time bash %
-    elseif &filetype == 'python'
-        set splitbelow
-        :sp
-        :term python3 %
-    elseif &filetype == 'html'
-        " silent! exec "!".g:mkdp_browser." % &"
-        exec "Bracey"
-        " exec "!google-chrome-stable %"
-    elseif &filetype == 'markdown'
-        exec "MarkdownPreview"
-    elseif &filetype == 'tex'
-        silent! exec "VimtexStop"
-        silent! exec "VimtexCompile"
-    elseif &filetype == 'dart'
-        CocCommand flutter.run
-    elseif &filetype == 'go'
-        set splitbelow
-        :sp
-        :term go run .
-    endif
-endfunc
+"-----------------function----------
+source ~/.config/nvim/core-setting/function.vim
