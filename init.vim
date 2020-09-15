@@ -150,7 +150,8 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim'
 "-----------------json,html,javascript-------------------
-Plug 'jelera/vim-javascript-syntax'
+Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+Plug 'elzr/vim-json'
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
 Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
@@ -161,7 +162,6 @@ Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
 Plug 'vim-python/python-syntax'
 call plug#end()
-
 
 "===
 "=== colorscheme
