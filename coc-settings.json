@@ -1,7 +1,6 @@
 {
   "coc.preferences.colorSupport": true,
   "coc.preferences.enableFloatHighlight": true,
-  "coc.preferences.snippetStatusText": "Ⓢ ",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.messageLevel": "error",
@@ -13,11 +12,12 @@
     "json",
     "python"
   ],
-  "coc.source.around.firstMatch": false,
-  "coc.source.buffer.firstMatch": false,
-  "suggest.detailMaxLength": 20,
   "highlight.colors.enable": false,
   "highlight.colorNames.enable": true,
+  "coc.source.around.firstMatch": false,
+  "coc.source.buffer.firstMatch": false,
+  "suggest.labelMaxLength": 40,
+  "suggest.detailMaxLength": 40,
   "suggest.noselect": true,
   "suggest.enablePreselect": false,
   "suggest.completionItemKindLabels": {
@@ -61,13 +61,13 @@
     "--style",
     "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
   ],
+  "codeLens.enable": true,
   "snippets.ultisnips.enable": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/plugged/vim-snippets/snippets"
   ],
   "snippets.snipmate.author": "ysx",
   "snippets.userSnippetsDirectory": "~/.config/nvim/my_snippets",
-  "list.previewHighlightGroup": "Statement",
   "explorer.width": 38,
   "explorer.quitOnOpen": true,
   "explorer.icon.enableNerdfont": true,
@@ -81,6 +81,7 @@
   "yank.highlight.enable": true,
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.outline.defaultOptions": ["--auto-preview"],
+  "list.previewHighlightGroup": "Statement",
   "languageserver": {
     "golang": {
       "command": "~/go/bin/gopls",

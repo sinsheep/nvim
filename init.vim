@@ -12,15 +12,17 @@
 " === Auto load  vim-plug for first time uses
 " ===
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 let mapleader=" "
 " filetype on
 " set cmdheight=2
-syntax on
+" syntax on
+" syntax enable
+" set list lcs=tab:\|\
 set autochdir
 set autoindent
 set cursorline
@@ -30,31 +32,28 @@ set hidden
 set hlsearch
 set ignorecase
 set incsearch
-set mouse=a
 set nobackup
 set noswapfile
 set notimeout
 set nowritebackup
 set number
-set rnu
+set relativenumber
 set scrolloff=10
-set shiftwidth=4
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
 set shortmess+=c
 set showcmd
 set signcolumn=yes
 set smartcase
 set splitbelow
 set splitright
-set tabstop=4
 set termguicolors " enable true colors support
 set textwidth=0
 set updatetime=100
-set updatetime=300
 set wildmenu
 set wrap
 exec "nohlsearch"
-set t_Co=256
-" set guifont=DroidSansMono_Nerd_Font:h11
 noremap <LEADER><CR> :nohlsearch<CR>
 
 "open file on last line
@@ -113,21 +112,18 @@ call plug#begin('~/.config/nvim/plugged')
 
 "---------------dress my vim------------
 Plug 'ryanoasis/vim-devicons'
-Plug 'nathanaelkane/vim-indent-guides'
+Plug 'Yggdroot/indentLine' , {'on':'IndentLinesToggle'}
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-" Plug 'liuchengxu/eleline.vim'
 Plug 'hardcoreplayers/spaceline.vim'
 Plug 'bagrat/vim-buffet'
 Plug 'glepnir/dashboard-nvim'
-" Plug 'mhinz/vim-startify'
-Plug 'itchyny/calendar.vim'
+Plug 'itchyny/calendar.vim', {'on':'Calendar'}
 Plug 'morhetz/gruvbox'
-Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
 " --------------awesome tool-------------
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
-Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go'}
+Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go','for':['cpp','c','python','go']}
 Plug 'voldikss/vim-floaterm'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -135,11 +131,12 @@ Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'pechorin/any-jump.vim'
 "-----------------editEnhancement----------------------------
 Plug 'tpope/vim-surround'
 Plug 'godlygeek/tabular'
-Plug 'tpope/vim-commentary'
-Plug 'chiel92/vim-autoformat'
+Plug 'tomtom/tcomment_vim'
+Plug 'chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 "-----------------gittools----------------------------
@@ -148,19 +145,22 @@ Plug 'airblade/vim-gitgutter'
 "-----------------highlight----------------------------
 Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
-Plug 'brooth/far.vim'
+Plug 'brooth/far.vim',{ 'on': ['F', 'Far', 'Fardo'] }
 "-----------------json,html,javascript-------------------
 Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
-Plug 'elzr/vim-json'
+Plug 'elzr/vim-json',{'for':'json'}
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
 Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'}
+Plug 'herringtondarkholme/yats.vim',{'for':['javascript','typescript']}
 "----------------markdown----------------------
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':'markdown' }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
-Plug 'vim-python/python-syntax'
+Plug 'vim-python/python-syntax',{'for':'python'}
+"----------------cpp or c------------------
+Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
 call plug#end()
 
 "===
@@ -181,14 +181,14 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 "===
 let g:dashboard_default_executive ='fzf'
 let g:dashboard_custom_shortcut={
-  \ 'last_session'       : 'SPC s l',
-  \ 'find_history'       : 'SPC f h',
-  \ 'find_file'          : 'CTRL P',
-  \ 'new_file'           : 'SPC n f',
-  \ 'change_colorscheme' : 'SPC s c',
-  \ 'find_word'          : 'SPC f a',
-  \ 'book_marks'         : 'SPC f b',
-  \ }
+      \ 'last_session'       : 'SPC s l',
+      \ 'find_history'       : 'SPC f h',
+      \ 'find_file'          : 'CTRL P',
+      \ 'new_file'           : 'SPC n f',
+      \ 'change_colorscheme' : 'SPC s c',
+      \ 'find_word'          : 'SPC f a',
+      \ 'book_marks'         : 'SPC f b',
+      \ }
 let g:dashboard_default_header='pikachu'
 
 "===
@@ -288,15 +288,15 @@ let g:mkdp_browser = ''
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_browserfunc = ''
 let g:mkdp_preview_options = {
-            \ 'mkit': {},
-            \ 'katex': {},
-            \ 'uml': {},
-            \ 'maid': {},
-            \ 'disable_sync_scroll': 0,
-            \ 'sync_scroll_type': 'middle',
-            \ 'hide_yaml_meta': 1,
-            \ 'sequence_diagrams': {}
-            \ }
+      \ 'mkit': {},
+      \ 'katex': {},
+      \ 'uml': {},
+      \ 'maid': {},
+      \ 'disable_sync_scroll': 0,
+      \ 'sync_scroll_type': 'middle',
+      \ 'hide_yaml_meta': 1,
+      \ 'sequence_diagrams': {}
+      \ }
 
 let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
@@ -342,19 +342,22 @@ let g:rainbow_active = 1
 " ===
 
 let g:coc_global_extensions =[
-            \'coc-python'
-            \,'coc-json'
-            \,'coc-highlight'
-            \,'coc-html'
-            \,'coc-css'
-            \,'coc-lists'
-            \,'coc-vimlsp'
-            \,'coc-translator'
-            \,'coc-tsserver'
-            \,'coc-explorer'
-            \,'coc-yank'
-            \,'coc-actions'
-            \,'coc-snippets']
+      \'coc-python'
+      \,'coc-json'
+      \,'coc-highlight'
+      \,'coc-html'
+      \,'coc-css'
+      \,'coc-lists'
+      \,'coc-vimlsp'
+      \,'coc-translator'
+      \,'coc-tsserver'
+      \,'coc-explorer'
+      \,'coc-yank'
+      \,'coc-actions'
+      \,'coc-diagnostic'
+      \,'coc-prettier'
+      \,'coc-snippets']
+
 
 imap <C-l> <Plug>(coc-snippets-expand)
 
@@ -368,19 +371,18 @@ let g:coc_snippet_next = '<c-j>'
 let g:coc_snippet_prev = '<c-k>'
 " use <c-j> for both expand and jump (make expand higher priority.)
 imap <c-j> <Plug>(coc-snippets-expand-jump)
-xmap <leader>x  <Plug>(coc-convert-snippet)
 " use tab for trigger completion with characters ahead and navigate.
 " note: use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
 inoremap <silent><expr> <TAB>
-            \ pumvisible() ? "\<C-n>" :
-            \ <SID>check_back_space() ? "\<TAB>" :
-            \ coc#refresh()
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~# '\s'
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " Use <c-space> to trigger completion.
@@ -388,13 +390,11 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
-if has('patch8.1.1068')
-    " Use `complete_info` if your (Neo)Vim version supports it.
-    inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 else
-    imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
 " Use `[g` and `]g` to navigate diagnostics
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
@@ -409,11 +409,11 @@ nmap <silent> gr <Plug>(coc-references)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
-    if (index(['vim','help'], &filetype) >= 0)
-        execute 'h '.expand('<cword>')
-    else
-        call CocAction('doHover')
-    endif
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
 endfunction
 
 " Highlight the symbol and its references when holding the cursor.
@@ -432,18 +432,19 @@ nmap <leader>f  <Plug>(cnc-format-selected)
 "coc-explorer
 nmap tt :CocCommand explorer<CR>
 augroup mygroup
-    autocmd!
-    " Setup formatexpr specified filetype(s).
-    autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-    " Update signature help on jump placeholder.
-    autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+  " Update signature help on jump placeholder.
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
 augroup end
 
 " Applying codeAction to the selected region.
 " Example: `<leader>aap` for current paragraph
 function! s:cocActionsOpenFromSelected(type) abort
-    execute 'CocCommand actions.open ' . a:type
+  execute 'CocCommand actions.open ' . a:type
 endfunction
+
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 " Remap keys for applying codeAction to the current line.
@@ -457,17 +458,20 @@ xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
 omap af <Plug>(coc-funcobj-a)
+xmap ic <Plug>(coc-classobj-i)
+omap ic <Plug>(coc-classobj-i)
+xmap ac <Plug>(coc-classobj-a)
+omap ac <Plug>(coc-classobj-a)
 
 nmap <Leader>t <Plug>(coc-translator-p)
 vmap <Leader>t <Plug>(coc-translator-pv)
 
+xmap <leader>x  <Plug>(coc-convert-snippet)
 nnoremap <silent> <leader>y  :<C-u>CocList -A --normal yank<cr>
 nnoremap <silent><nowait> \a  :<C-u>CocList diagnostics<cr>
 nnoremap <silent><nowait> <leader>l  :<C-u>CocList<cr>
 nnoremap <silent><nowait> <leader>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
-
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " ===
 " === vim-go
@@ -506,6 +510,7 @@ nmap ss <Plug>(easymotion-s2)
 "===
 "=== python
 "===
+let g:python_highlight_all = 1
 let g:python_host_skip_check=1
 let g:python_host_prog = '/usr/bin/python'
 let g:python3_host_skip_check=1
@@ -524,24 +529,22 @@ let g:bracey_refresh_on_save=1
 " let g:bracey_eval_on_save = 1
 
 " ===
-" === vim-indent-guides
+" === indentLine
 " ===
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 1
-let g:indent_guides_auto_colors = 0
+noremap <leader>ig :IndentLinesToggle<cr>
 
 
 "vimspector
 let g:vimspector_enable_mappings = 'HUMAN'
 function! s:read_template_into_buffer(template)
-    " has to be a function to avoid the extra space fzf#run insers otherwise
-    execute '0r ~/.config/nvim/sample_vimspector_json/'.a:template
+  " has to be a function to avoid the extra space fzf#run insers otherwise
+  execute '0r ~/.config/nvim/sample_vimspector_json/'.a:template
 endfunction
 command! -bang -nargs=* LoadVimSpectorJsonTemplate call fzf#run({
-            \   'source': 'ls -1 ~/.config/nvim/sample_vimspector_json',
-            \   'down': 20,
-            \   'sink': function('<sid>read_template_into_buffer')
-            \ })
+      \   'source': 'ls -1 ~/.config/nvim/sample_vimspector_json',
+      \   'down': 20,
+      \   'sink': function('<sid>read_template_into_buffer')
+      \ })
 noremap <leader>vs :tabe .vimspector.json<CR>:LoadVimSpectorJsonTemplate<CR>
 noremap <leader>dr :VimspectorReset<cr>
 
@@ -607,6 +610,20 @@ nnoremap ]h :GitGutterNextHunk<CR>
 nmap <leader>hs <Plug>(GitGutterStageHunk)
 nmap <leader>hu <Plug>(GitGutterUndoHunk)
 
-
+"===
+"=== any-jump
+"===
+" nnoremap <leader>j :AnyJump<CR>
+" xnoremap <leader>j :AnyJumpVisual<CR>
+" nnoremap <leader>ab :AnyJumpBack<CR>
+" nnoremap <leader>al :AnyJumpLastResults<CR>
+"
+"===
+"=== vimlsp
+"===
+let g:markdown_fenced_languages = [
+      \ 'vim',
+      \ 'help'
+      \]
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
