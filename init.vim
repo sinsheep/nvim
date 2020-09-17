@@ -231,11 +231,12 @@ nmap <leader>7 <Plug>BuffetSwitch(7)
 nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
-noremap <Tab> :bn<CR>
-noremap <S-Tab> :bp<CR>
-noremap <Leader><Tab> :Bw<CR>
-noremap <Leader><S-Tab> :Bw!<CR>
-noremap <C-s> :tabnew split<CR>
+
+" noremap <Tab> :bn<CR>
+" noremap <S-Tab> :bp<CR>
+ noremap <Leader>w :Bw<CR>
+" noremap <Leader><S-Tab> :Bw!<CR>
+" noremap <C-s> :tabnew split<CR>
 
 " dracula colorscheme
 function! g:BuffetSetCustomColors()
@@ -512,7 +513,7 @@ nmap ss <Plug>(easymotion-s2)
 "===
 let g:python_highlight_all = 1
 let g:python_host_skip_check=1
-let g:python_host_prog = '/usr/bin/python'
+let g:python_host_prog = '/usr/bin/python2'
 let g:python3_host_skip_check=1
 let g:python3_host_prog = '/usr/bin/python3'
 
