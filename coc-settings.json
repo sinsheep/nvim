@@ -61,7 +61,8 @@
     "--style",
     "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
   ],
-  "codeLens.enable": true,
+  //"codeLens.enable": true,
+  //"codeLens.subseparator": "|",
   "snippets.ultisnips.enable": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/plugged/vim-snippets/snippets"

@@ -139,6 +139,9 @@ Plug 'tomtom/tcomment_vim'
 Plug 'chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
+
+"-----------------datebaseTools----------------------------
+Plug 'tpope/vim-dadbod'
 "-----------------gittools----------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -189,7 +192,8 @@ let g:dashboard_custom_shortcut={
       \ 'find_word'          : 'SPC f a',
       \ 'book_marks'         : 'SPC f b',
       \ }
-let g:dashboard_default_header='pikachu'
+" let g:dashboard_default_header='pikachu'
+source ~/.config/nvim/core-setting/dashboard.vim
 
 "===
 "===   hexokinase
