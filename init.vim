@@ -134,14 +134,14 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'pechorin/any-jump.vim'
 "-----------------editEnhancement----------------------------
 Plug 'tpope/vim-surround'
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular',{'on':'Tabular'}
 Plug 'tomtom/tcomment_vim'
 Plug 'chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 
 "-----------------datebaseTools----------------------------
-Plug 'tpope/vim-dadbod'
+Plug 'tpope/vim-dadbod',{'on':'DB'}
 "-----------------gittools----------------------------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -157,7 +157,7 @@ Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'}
 Plug 'herringtondarkholme/yats.vim',{'for':['javascript','typescript']}
 "----------------markdown----------------------
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':'markdown' }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'markdown'] }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
@@ -238,7 +238,7 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 
 " noremap <Tab> :bn<CR>
 " noremap <S-Tab> :bp<CR>
- noremap <Leader>w :Bw<CR>
+noremap <Leader>w :Bw<CR>
 " noremap <Leader><S-Tab> :Bw!<CR>
 " noremap <C-s> :tabnew split<CR>
 
@@ -598,6 +598,7 @@ nmap <leader>fc :FloatermKill<cr>
 "===
 "=== gitgutter
 "===
+
 let g:gitgutter_sign_allow_clobber = 0
 let g:gitgutter_map_keys = 0
 let g:gitgutter_override_sign_column_highlight = 0
@@ -630,5 +631,9 @@ let g:markdown_fenced_languages = [
       \ 'vim',
       \ 'help'
       \]
+
+"===
+"=== vim-dadbod
+"===
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
