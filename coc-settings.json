@@ -16,6 +16,7 @@
   "highlight.colorNames.enable": true,
   "coc.source.around.firstMatch": false,
   "coc.source.buffer.firstMatch": false,
+  "coc.preferences.useQuickfixForLocations": true,
   "suggest.labelMaxLength": 40,
   "suggest.detailMaxLength": 40,
   "suggest.noselect": true,
@@ -57,10 +58,6 @@
   "python.formatting.provider": "autopep8",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
-  "python.formatting.yapfArgs": [
-    "--style",
-    "{SPACES_AROUND_POWER_OPERATOR: True, SPACES_BEFORE_COMMENT: 1}"
-  ],
   //"codeLens.enable": true,
   //"codeLens.subseparator": "|",
   "snippets.ultisnips.enable": true,
