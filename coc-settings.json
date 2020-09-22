@@ -58,8 +58,6 @@
   "python.formatting.provider": "autopep8",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
-  //"codeLens.enable": true,
-  //"codeLens.subseparator": "|",
   "snippets.ultisnips.enable": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/plugged/vim-snippets/snippets"
@@ -77,6 +75,7 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "yank.highlight.enable": true,
+  "list.source.colors.defaultOptions": ["--auto-preview"],
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.outline.defaultOptions": ["--auto-preview"],
   "list.previewHighlightGroup": "Statement",

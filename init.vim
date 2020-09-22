@@ -107,11 +107,11 @@ Plug 'morhetz/gruvbox'
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go','for':['cpp','c','python','go']}
-Plug 'voldikss/vim-floaterm'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'voldikss/vim-floaterm',{'on':['FloatermToggle','FloatermNew']}
+Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
-Plug 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion', { 'on':['<Plug>(easymotion-s2)'] }
 Plug 'tpope/vim-repeat'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'pechorin/any-jump.vim'
@@ -122,8 +122,8 @@ Plug 'tomtom/tcomment_vim'
 Plug 'chiel92/vim-autoformat',{'on':'Autoformat'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
-
-"-----------------datebaseTools----------------------------
+"-----------------databaseTools----------------------------
+" Plug 'kristijanhusak/vim-dadbod-ui'
 Plug 'tpope/vim-dadbod',{'on':'DB'}
 "-----------------gittools----------------------------
 Plug 'tpope/vim-fugitive'
@@ -133,14 +133,14 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim',{ 'on': ['F', 'Far', 'Fardo'] }
 "-----------------json,html,javascript-------------------
-Plug 'yuezk/vim-js', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less'] }
+Plug 'yuezk/vim-js', { 'for': ['php', 'html', 'javascript', 'css'] }
 Plug 'elzr/vim-json',{'for':'json'}
 Plug 'turbio/bracey.vim',{'for': ['html' ]}
 Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'}
 Plug 'herringtondarkholme/yats.vim',{'for':['javascript','typescript']}
 "----------------markdown----------------------
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'markdown'] }
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'vim-plug','markdown'] }
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
@@ -303,7 +303,7 @@ noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:50%']
 let g:vista#renderer#enable_icon = 1
-let g:vista_disable_statusline = 1
+" let g:vista_disable_statusline = 1
 let g:vista_default_executive = 'ctags'
 let g:vista_echo_cursor_strategy = 'floating_win'
 " let g:vista#renderer#icons = {
@@ -442,6 +442,8 @@ nmap <leader>qf  <Plug>(coc-fix-current)
 
 " Introduce function text object
 " NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
 xmap if <Plug>(coc-funcobj-i)
 xmap af <Plug>(coc-funcobj-a)
 omap if <Plug>(coc-funcobj-i)
@@ -561,8 +563,8 @@ vnoremap Y "+y
 " ===
 " hi FloatermBorder guibg=orange guifg=cyan
 hi FloatermNC guibg=skyblue
-let g:floaterm_keymap_new = '<F1>'
 let g:floaterm_keymap_next   = '<F2>'
+nmap <F1> :FloatermNew<cr>
 nmap <leader>ft :FloatermToggle<cr>
 nmap <leader>fc :FloatermKill<cr>
 
@@ -616,5 +618,6 @@ let g:markdown_fenced_languages = [
 "===
 "=== vim-dadbod
 "===
+" let g:db_ui_use_nerd_fonts=1
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
