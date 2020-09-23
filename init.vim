@@ -17,6 +17,8 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+
+" runtime+=~/.config/nvim/rplugin/python3/
 let mapleader=" "
 " filetype on
 " set cmdheight=2
@@ -135,7 +137,7 @@ Plug 'brooth/far.vim',{ 'on': ['F', 'Far', 'Fardo'] }
 "-----------------json,html,javascript-------------------
 Plug 'yuezk/vim-js', { 'for': ['php', 'html', 'javascript', 'css'] }
 Plug 'elzr/vim-json',{'for':'json'}
-Plug 'turbio/bracey.vim',{'for': ['html' ]}
+Plug 'turbio/bracey.vim',{'for':['html']}
 Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'}
 Plug 'herringtondarkholme/yats.vim',{'for':['javascript','typescript']}
@@ -147,6 +149,7 @@ Plug 'fatih/vim-go',{'for': ['go']}
 Plug 'vim-python/python-syntax',{'for':'python'}
 "----------------cpp or c------------------
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
+"----------------my plug ---------------
 call plug#end()
 
 "===
@@ -169,7 +172,7 @@ let g:dashboard_default_executive ='fzf'
 let g:dashboard_custom_shortcut={
       \ 'last_session'       : 'SPC s l',
       \ 'find_history'       : 'SPC f h',
-      \ 'find_file'          : 'CTRL P',
+      \ 'find_file'          : 'CTRL p',
       \ 'new_file'           : 'SPC n f',
       \ 'change_colorscheme' : 'SPC s c',
       \ 'find_word'          : 'SPC f a',
@@ -501,9 +504,7 @@ nmap ss <Plug>(easymotion-s2)
 "=== python
 "===
 let g:python_highlight_all = 1
-let g:python_host_skip_check=1
 let g:python_host_prog = '/usr/bin/python2'
-let g:python3_host_skip_check=1
 let g:python3_host_prog = '/usr/bin/python3'
 
 " ===

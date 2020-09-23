@@ -1,10 +1,9 @@
 {
-  "coc.preferences.colorSupport": true,
   "coc.preferences.enableFloatHighlight": true,
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.hoverTarget": "float",
   "coc.preferences.messageLevel": "error",
-  "coc.preferences.previewMaxHeight": 12,
+  "coc.preferences.previewMaxHeight": 20,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
     "html",
@@ -16,7 +15,6 @@
   "highlight.colorNames.enable": true,
   "coc.source.around.firstMatch": false,
   "coc.source.buffer.firstMatch": false,
-  "coc.preferences.useQuickfixForLocations": true,
   "suggest.labelMaxLength": 40,
   "suggest.detailMaxLength": 40,
   "suggest.noselect": true,
@@ -75,7 +73,6 @@
   "diagnostic.virtualTextPrefix": " ❯❯❯ ",
   "diagnostic.virtualText": true,
   "yank.highlight.enable": true,
-  "list.source.colors.defaultOptions": ["--auto-preview"],
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.outline.defaultOptions": ["--auto-preview"],
   "list.previewHighlightGroup": "Statement",

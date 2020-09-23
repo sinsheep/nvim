@@ -27,7 +27,6 @@ func! CompileRunGcc()
         :sp
         :term python3 %
     elseif &filetype == 'html'
-        " silent! exec "!".g:mkdp_browser." % &"
         exec "Bracey"
         " exec "!google-chrome-stable %"
     elseif &filetype == 'markdown'
