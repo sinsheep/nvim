@@ -222,8 +222,8 @@ nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
 
-" noremap <Tab> :bn<CR>
-" noremap <S-Tab> :bp<CR>
+noremap ]b :bn<CR>
+noremap [b :bp<CR>
 noremap <Leader>w :Bw<CR>
 " noremap <Leader><S-Tab> :Bw!<CR>
 " noremap <C-s> :tabnew split<CR>
@@ -580,6 +580,7 @@ nmap <leader>fc :FloatermKill<cr>
 " noremap tmn :-tabmove<CR>
 " noremap tmi :+tabmove<CR>
 " noremap <LEADER>q <C-w>j:q<CR>
+
 "===
 "=== gitgutter
 "===

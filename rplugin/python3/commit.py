@@ -7,7 +7,7 @@ import urllib.request as ur
 import pynvim
 
 headers = {
-    'Cookie': 'JSESSIONID=34E77C1A34F590FBEA2C69048AF35C82; pgv_pvid=2789003169; __qc_wId=733'
+    'Cookie': 'JSESSIONID=E192E58EE1B044566DA644678DBF5ED5; pgv_pvid=2789003169; __qc_wId=69'
 }
 tturl = 'http://www.tzcoder.cn/acmhome/submitcode.do'
 # http://www.tzcoder.cn/acmhome/submitcode.do
@@ -29,7 +29,7 @@ class ojCommit(object):
         strtxt = "\n".join(b[:])
         fordate = {}
         fordate["contestId"] = "0"
-        fordate["localIp"] = "60.180.247.221"
+        fordate["localIp"] = "60.180.247.225"
         fordate["problemId"] = problemId
         fordate["language"] = "C++"
         fordate["code"] = strtxt.encode("utf-8")
