@@ -15,18 +15,15 @@ tturl = 'http://www.tzcoder.cn/acmhome/submitcode.do'
 
 @pynvim.plugin
 class ojCommit(object):
-    def __init__(self, vim):
+    def __init__(self, vim) -> None:
         self.vim = vim
 
     @pynvim.command('TestCommand', sync=True)
     def alter_current_line(self) -> None:
-        pynvim.api
-        # self.vim.current.line = "new line"
-        buf = self.vim.current.buffer
-        buf.append('hi')
+        self.vim.current.line = "new line"
 
     @pynvim.command("OjCommit")
-    def commit(self):
+    def commit(self) -> None:
         b = self.vim.current.buffer
         problemId = str(b.name).replace('.cpp', '')[-4:]
         strtxt = "\n".join(b[:])
@@ -41,16 +38,13 @@ class ojCommit(object):
         ur.urlopen(req)
 
     @pynvim.command("OjLevel")
-    def different(self):
+    def different(self) -> None:
         turl = 'http://www.tzcoder.cn/acmhome/problemList.do?method=show&type=1&page='
-        global url
         b = self.vim.current.buffer
         anotherId = b.name.replace(".cpp", '')[-4:]
         a = int(anotherId)
         a = int((a-1000)/100)+1
-        print(a)
         url = turl+str(a)
-        print(url)
         req = ur.Request(url)
         response = ur.urlopen(req)
         html = response.read().decode('gbk')
@@ -68,5 +62,4 @@ class ojCommit(object):
             aclist = re.findall(brule, html)
             if not len(aclist):
                 aclist = re.findall(arule, html)
-        self.vim.current.buffer.append(aclist[0])
-        print(aclist[0])
+        self.vim.command("echo 'this problem rank is "+aclist[0]+"'")
