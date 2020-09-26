@@ -135,12 +135,12 @@ Plug 'luochen1990/rainbow'
 "-----------------find && place -----------------------------
 Plug 'brooth/far.vim',{ 'on': ['F', 'Far', 'Fardo'] }
 "-----------------json,html,javascript-------------------
-Plug 'yuezk/vim-js', { 'for': ['php', 'html', 'javascript', 'css'] }
-Plug 'elzr/vim-json',{'for':'json'}
-Plug 'turbio/bracey.vim',{'for':['html']}
-Plug 'mattn/emmet-vim',{'for':[ 'html' ]}
+Plug 'yuezk/vim-js' ,{ 'for': ['php', 'html', 'javascript', 'css'] }
+Plug 'elzr/vim-json' ,{'for':'json'}
+Plug 'turbio/bracey.vim',{'for':'html'}
+Plug 'mattn/emmet-vim',{'for':'html'}
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'}
-Plug 'herringtondarkholme/yats.vim',{'for':['javascript','typescript']}
+Plug 'herringtondarkholme/yats.vim',{'for': 'typescript'}
 "----------------markdown----------------------
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'vim-plug','markdown'] }
 "----------------go----------------------

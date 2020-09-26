@@ -14,9 +14,11 @@ tturl = 'http://www.tzcoder.cn/acmhome/submitcode.do'
 
 
 @pynvim.plugin
-class ojCommit(object):
+class Oj(object):
     def __init__(self, vim) -> None:
         self.vim = vim
+        self.head = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'}
 
     @pynvim.command('TestCommand', sync=True)
     def alter_current_line(self) -> None:
@@ -38,7 +40,7 @@ class ojCommit(object):
         ur.urlopen(req)
 
     @pynvim.command("OjLevel")
-    def different(self) -> None:
+    def level(self) -> None:
         turl = 'http://www.tzcoder.cn/acmhome/problemList.do?method=show&type=1&page='
         b = self.vim.current.buffer
         anotherId = b.name.replace(".cpp", '')[-4:]
@@ -63,3 +65,33 @@ class ojCommit(object):
             if not len(aclist):
                 aclist = re.findall(arule, html)
         self.vim.command("echo 'this problem rank is "+aclist[0]+"'")
+
+    def savelist(self, url):
+        req = ur.Request(url, headers=self.head)
+        response = ur.urlopen(req)
+        html = response.read().decode('gbk')
+        # print(html)
+        rule = r'<a href="[^"]+">(\d{4})</a>'
+        rulel = r'<div align="center"><h2><strong>已解答的较难题[\s\S]+?<strong>'
+        html1 = re.search(rulel, html).group(0)
+        print(html1)
+        aclist = re.findall(rule, html1)
+        return aclist
+
+    @pynvim.command("OjDifferent")
+    def different(self, bname):
+        cshtml = 'http://www.tzcoder.cn/acmhome/userDetail.do?&userName='
+        aurl = cshtml+"sz008"
+        burl = cshtml+bname
+        alist = self.savelist(aurl)
+        blist = self.savelist(burl)
+        anotlist = [x for x in alist if x not in blist]
+        bnotlist = [y for y in blist if y not in alist]
+        self.vim.command("vsplit")
+        self.vim.command("e ~/myCode/clang/acm/tzoj/different/"+bname+".txt")
+        del self.vim.current.buffer[:]
+        self.vim.current.buffer[0] = anotlist[0]
+        for pro in anotlist[1:]:
+            self.vim.current.buffer.append(pro)
+
+    # @pynvim.command("OjDownloadAll")
