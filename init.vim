@@ -38,6 +38,8 @@ set nobackup
 set noswapfile
 set notimeout
 set nowritebackup
+set foldenable
+set foldlevel=9999
 set number
 set relativenumber
 set scrolloff=10
@@ -55,6 +57,7 @@ set textwidth=0
 set updatetime=100
 set wildmenu
 set wrap
+set ttyfast
 exec "nohlsearch"
 noremap <LEADER><CR> :nohlsearch<CR>
 
@@ -89,7 +92,7 @@ noremap <m-right> :vertical resize+5<CR>
 
 " terminal behaviors
 let g:neoterm_autoscroll = 1
-autocmd termopen term://* startinsert
+" autocmd termopen term://* startinsert
 tnoremap <c-n> <c-\><c-n>
 tnoremap <C-O> <C-\><C-N><C-O>
 

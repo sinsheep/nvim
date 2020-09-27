@@ -86,7 +86,7 @@ class Oj(object):
         alist = self.savelist(aurl)
         blist = self.savelist(burl)
         anotlist = [x for x in alist if x not in blist]
-        bnotlist = [y for y in blist if y not in alist]
+        # bnotlist = [y for y in blist if y not in alist]
         self.vim.command("vsplit")
         self.vim.command("e ~/myCode/clang/acm/tzoj/different/"+bname+".txt")
         del self.vim.current.buffer[:]
