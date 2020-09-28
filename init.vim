@@ -18,7 +18,6 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 
-" runtime+=~/.config/nvim/rplugin/python3/
 let mapleader=" "
 " filetype on
 " set cmdheight=2
@@ -70,7 +69,6 @@ nmap s <nop>
 nmap S :w<CR>
 nmap Q :q<CR>
 nmap R :source $MYVIMRC<CR>
-
 
 
 ""禁用方向键位
@@ -153,6 +151,7 @@ Plug 'vim-python/python-syntax',{'for':'python'}
 "----------------cpp or c------------------
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
 "----------------my plug ---------------
+Plug 'sinsheep/vim-tzoj',{'on':'OjCommit'}
 call plug#end()
 
 "===
@@ -624,5 +623,13 @@ let g:markdown_fenced_languages = [
 "=== vim-dadbod
 "===
 " let g:db_ui_use_nerd_fonts=1
+
+"===
+"=== vim-tzoj
+"===
+let g:tzoj_cookie = ''
+let g:tzoj_compare_user='sxvtc181030249'
+let g:tzoj_user='sz008'
+
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
