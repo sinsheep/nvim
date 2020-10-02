@@ -19,7 +19,6 @@ endif
 
 
 let mapleader=" "
-" filetype on
 " set cmdheight=2
 " syntax on
 " syntax enable
@@ -68,8 +67,7 @@ noremap <LEADER>rc :e ~/.config/nvim/init.vim<CR>
 nmap s <nop>
 nmap S :w<CR>
 nmap Q :q<CR>
-nmap R :source $MYVIMRC<CR>
-
+" nmap R :source $MYVIMRC<CR>
 
 ""禁用方向键位
 "map <UP>  <nop>
@@ -151,7 +149,7 @@ Plug 'vim-python/python-syntax',{'for':'python'}
 "----------------cpp or c------------------
 Plug 'jackguo380/vim-lsp-cxx-highlight',{'for':['cpp','c']}
 "----------------my plug ---------------
-Plug 'sinsheep/vim-tzoj',{'on':'OjCommit'}
+" Plug 'sinsheep/vim-tzoj',{'for':['cpp','c']}
 call plug#end()
 
 "===
@@ -303,7 +301,7 @@ source ~/.config/nvim/md-snippets.vim
 " ===
 noremap tg :Vista coc<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
-" let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 "
 let g:vista_default_executive = 'ctags'
 let g:vista_fzf_preview = ['right:50%']
