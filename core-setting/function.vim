@@ -7,13 +7,13 @@ nmap <leader>R :call CompileRunGcc()<CR>
 func! CompileRunGcc()
     exec "w"
     if &filetype == 'c'
-        exec "!g++ -Wall % -ggdb -o %<"
+        exec "!g++ -Wall % -o %<"
         :sp
         :res -15
         :term ./%<
     elseif &filetype == 'cpp'
         set splitbelow
-        exec "!g++ -std=c++11 % -Wall -ggdb -o %<"
+        exec "!g++ -std=c++11 % -Wall -o %<"
         :sp
         :res -15
         :term ./%<

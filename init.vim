@@ -41,9 +41,9 @@ set foldlevel=9999
 set number
 set relativenumber
 set scrolloff=10
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set shiftwidth=4
+set softtabstop=4
+set tabstop=4
 set shortmess+=c
 set showcmd
 set signcolumn=yes
@@ -105,9 +105,10 @@ Plug 'glepnir/dashboard-nvim'
 Plug 'itchyny/calendar.vim', {'on':'Calendar'}
 Plug 'morhetz/gruvbox'
 " --------------awesome tool-------------
+Plug 'andrewradev/splitjoin.vim'
 Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
-Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go','for':['cpp','c','python','go']}
+" Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go','for':['cpp','c','python','go']}
 Plug 'voldikss/vim-floaterm',{'on':['FloatermToggle','FloatermNew']}
 Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
