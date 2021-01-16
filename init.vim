@@ -110,7 +110,7 @@ Plug 'mg979/vim-visual-multi'
 Plug 'liuchengxu/vista.vim'
 " Plug 'puremourning/vimspector',{'do': './install_gadget.py --enable-c --enable-python --enable-go','for':['cpp','c','python','go']}
 Plug 'voldikss/vim-floaterm',{'on':['FloatermToggle','FloatermNew']}
-Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
+" Plug 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'easymotion/vim-easymotion', { 'on':['<Plug>(easymotion-s2)'] }
