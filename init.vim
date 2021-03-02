@@ -636,9 +636,9 @@ let g:markdown_fenced_languages = [
 "===
 "=== vim-tzoj
 "===
-let g:tzoj_cookie = ''
-let g:tzoj_compare_user='sxvtc181030249'
-let g:tzoj_user='sz008'
+" let g:tzoj_cookie = ''
+" let g:tzoj_compare_user='sxvtc181030249'
+" let g:tzoj_user='sz008'
 
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
