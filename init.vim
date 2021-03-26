@@ -225,7 +225,7 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 
 noremap ]b :bn<CR>
 noremap [b :bp<CR>
-noremap <Leader>w :Bw<CR>
+noremap <Leader>w :bw<CR>
 " noremap <Leader><S-Tab> :Bw!<CR>
 " noremap <C-s> :tabnew split<CR>
 
