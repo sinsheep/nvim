@@ -6,7 +6,6 @@
   "coc.preferences.previewMaxHeight": 20,
   "coc.preferences.formatOnSaveFiletypes": [
     "javascript",
-    "html",
     "css",
     "json",
     "python"
@@ -52,12 +51,12 @@
   "html.validate.scripts": true,
   "html.validate.styles": true,
   "html.autoClosingTags": true,
-  "html.format.indentInnerHtml": true,
+  "html.format.indentInnerHtml": false,
   "python.autoComplete.addBrackets": true,
   "python.formatting.provider": "autopep8",
   "python.linting.enabled": true,
   "python.linting.lintOnSave": true,
-  "python.jediEnabled": false,
+  "python.jediEnabled": true,
   "snippets.ultisnips.enable": true,
   "snippets.ultisnips.directories": [
     "$HOME/.config/nvim/plugged/vim-snippets/snippets"

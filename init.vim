@@ -143,6 +143,8 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase','on': 'HexokinaseToggle'
 Plug 'herringtondarkholme/yats.vim',{'for': 'typescript'}
 "----------------markdown----------------------
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'vim-plug','markdown'] }
+"----------------latex----------------------
+Plug 'lervag/vimtex'
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
@@ -225,6 +227,8 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 
 noremap ]b :bn<CR>
 noremap [b :bp<CR>
+noremap ]t :tabn<CR>
+noremap [t :tabp<CR>
 noremap <Leader>w :bw<CR>
 " noremap <Leader><S-Tab> :Bw!<CR>
 " noremap <C-s> :tabnew split<CR>
@@ -639,6 +643,14 @@ let g:markdown_fenced_languages = [
 " let g:tzoj_cookie = ''
 " let g:tzoj_compare_user='sxvtc181030249'
 " let g:tzoj_user='sz008'
+
+"===
+"=== vimtex
+"===
+let g:tex_flavor='latex'
+let g:vimtex_view_method='skim'
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
