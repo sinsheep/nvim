@@ -145,6 +145,7 @@ Plug 'herringtondarkholme/yats.vim',{'for': 'typescript'}
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() },'for':[ 'vim-plug','markdown'] }
 "----------------latex----------------------
 Plug 'lervag/vimtex'
+" Plug 'xuhdev/vim-latex-live-preview'
 "----------------go----------------------
 Plug 'fatih/vim-go',{'for': ['go']}
 "----------------python------------------
@@ -304,7 +305,7 @@ source ~/.config/nvim/md-snippets.vim
 " ===
 " === vista.vim
 " ===
-noremap tg :Vista coc<CR>
+noremap tg :Vista<CR>
 noremap <c-t> :silent! Vista finder coc<CR>
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 "
@@ -314,10 +315,10 @@ let g:vista#renderer#enable_icon = 1
 " let g:vista_disable_statusline = 1
 let g:vista_default_executive = 'ctags'
 let g:vista_echo_cursor_strategy = 'floating_win'
-" let g:vista#renderer#icons = {
-"             \   "function": "\uf794",
-"             \   "variable": "\uf71b"
-"             \}
+let g:vista#renderer#icons = {
+            \   "function": "\uf794",
+            \   "variable": "\uf71b"
+            \}
 
 " ===
 " === vim-emmet
@@ -338,8 +339,7 @@ let g:rainbow_active = 1
 " ===
 
 let g:coc_global_extensions =[
-      \'coc-python'
-      \,'coc-json'
+      \'coc-json'
       \,'coc-highlight'
       \,'coc-html'
       \,'coc-css'
@@ -648,9 +648,12 @@ let g:markdown_fenced_languages = [
 "=== vimtex
 "===
 let g:tex_flavor='latex'
-let g:vimtex_view_method='skim'
-set conceallevel=1
+let g:vimtex_view_method='zathura'
+" set conceallevel=1
 let g:tex_conceal='abdmg'
+let g:vimtex_compiler_latexmk_engines={'_':'-xelatex'}
+let g:vimtex_compiler_latexrun_engines={'_':'xelatex'}
+" let g:livepreview_previewer = 'epdfview'
 
 "-----------------function----------
 source ~/.config/nvim/core-setting/function.vim
