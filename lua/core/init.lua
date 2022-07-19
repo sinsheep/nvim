@@ -1,0 +1,5 @@
+require('core.options')
+require('core.colorscheme')
+require('core.plugins')
+require('core.telescope')
+require('core.keymaps')

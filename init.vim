@@ -23,7 +23,6 @@ let mapleader=" "
 " syntax on
 " syntax enable
 " set list lcs=tab:\|\
-set autochdir
 set autoindent
 set cursorline
 set encoding=UTF-8
