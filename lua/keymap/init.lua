@@ -21,7 +21,11 @@ nmap({
   { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
   -- toggleterm
   { '<leader>lg', cmd('lua _LAZYGIT_TOGGLE()'), opts(noremap, silent)},
-  { '<leader>py', cmd('lua _PYTHON_TOGGLE()'), opts(noremap, silent)}
+  { '<leader>py', cmd('lua _PYTHON_TOGGLE()'), opts(noremap, silent)},
+
+
+  -- diagnostic
+  {'<leader>g', vim.diagnostic.open_float, opts(noremap,silent)}
 
 })
 
