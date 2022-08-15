@@ -4,320 +4,155 @@ times in msec
  clock   self+sourced   self:  sourced script
  clock   elapsed:              other lines
 
-000.007  000.007: --- NVIM STARTING ---
-000.679  000.672: locale set
-001.287  000.609: inits 1
-001.310  000.023: window checked
-001.439  000.129: parsing arguments
-011.336  009.897: expanding arguments
-011.419  000.083: inits 2
-011.844  000.424: init highlight
-011.845  000.001: waiting for UI
-013.687  001.842: done waiting for UI
-013.723  000.036: init screen for UI
-013.764  000.041: init default mappings
-013.972  000.208: init default autocommands
-016.671  000.627  000.627: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
-017.261  000.198  000.198: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
-026.049  007.319  007.319: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
-304.036  286.528  279.209: sourcing /Users/yangshixin/.config/nvim/init.lua
-304.103  002.777: sourcing vimrc file(s)
-304.851  000.221  000.221: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
-311.444  000.125  000.125: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
-312.066  007.150  007.025: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
-312.884  000.222  000.222: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
-313.025  000.792  000.570: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
-317.908  002.806  002.806: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
-321.094  003.112  003.112: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
-321.338  000.192  000.192: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
-322.767  000.453  000.453: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
-322.918  001.526  001.072: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
-323.161  000.194  000.194: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
-323.604  000.394  000.394: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
-324.130  000.128  000.128: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
-324.137  000.472  000.344: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
-324.308  000.116  000.116: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
-324.410  000.046  000.046: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
-324.607  000.142  000.142: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
-324.791  000.130  000.130: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
-324.895  000.046  000.046: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
-325.136  000.187  000.187: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
-326.567  001.275  001.275: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
-327.217  004.313: loading rtp plugins
-334.363  005.623  005.623: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
-335.000  000.243  000.243: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
-336.279  000.839  000.839: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
-336.805  000.223  000.223: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
-338.389  001.095  001.095: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
-349.800  011.027  011.027: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
-350.680  000.641  000.641: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
-351.194  000.187  000.187: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
-351.843  000.168  000.168: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
-353.033  000.653  000.653: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
-353.610  000.225  000.225: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
-353.986  000.141  000.141: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/which-key.nvim/plugin/which-key.vim
-354.264  005.982: loading packages
-355.705  000.891  000.891: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
-356.814  000.966  000.966: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
-357.407  000.464  000.464: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
-358.238  000.516  000.516: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
-358.919  000.541  000.541: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
-359.368  000.304  000.304: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/after/plugin/Comment.lua
-359.374  001.428: loading after plugins
-359.386  000.012: inits 3
-368.625  009.239: reading ShaDa
-373.985  000.237  000.237: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin/lua.vim
-376.180  000.212  000.212: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent/lua.vim
-384.200  002.676  002.676: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/lua.vim
-420.600  048.850: opening buffers
-422.885  002.285: BufEnter autocommands
-422.892  000.006: editing files in windows
-431.181  008.289: VimEnter autocommands
-431.187  000.006: UIEnter autocommands
-432.029  000.449  000.449: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/provider/clipboard.vim
-432.038  000.403: before starting main loop
-474.644  042.605: first screen update
-474.649  000.005: --- NVIM STARTED ---
+000.015  000.015: --- NVIM STARTING ---
+001.778  001.763: locale set
+003.131  001.353: inits 1
+003.171  000.040: window checked
+003.386  000.216: parsing arguments
+013.058  009.671: expanding arguments
+013.148  000.090: inits 2
+013.882  000.734: init highlight
+013.884  000.002: waiting for UI
+016.768  002.884: done waiting for UI
+016.803  000.035: init screen for UI
+016.845  000.042: init default mappings
+016.931  000.086: init default autocommands
+019.870  000.540  000.540: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
+020.380  000.057  000.057: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
+029.569  008.281  008.281: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
+256.558  235.920  227.639: sourcing /Users/yangshixin/.config/nvim/init.lua
+256.615  003.167: sourcing vimrc file(s)
+257.119  000.049  000.049: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
+265.065  000.013  000.013: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
+265.608  008.427  008.414: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
+266.249  000.078  000.078: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
+266.374  000.480  000.402: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
+268.385  000.199  000.199: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
+268.438  000.014  000.014: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
+268.528  000.054  000.054: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
+269.637  000.238  000.238: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+269.774  001.187  000.949: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
+269.978  000.161  000.161: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
+270.364  000.340  000.340: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
+270.605  000.011  000.011: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
+270.611  000.191  000.179: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
+270.741  000.084  000.084: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
+270.828  000.038  000.038: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
+270.991  000.113  000.113: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
+271.139  000.097  000.097: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
+271.212  000.022  000.022: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
+271.420  000.160  000.160: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
+302.772  001.888  001.888: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+303.431  031.866  029.978: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
+303.913  003.817: loading rtp plugins
+305.341  000.183  000.183: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/plugin/Comment.lua
+306.111  000.391  000.391: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+306.606  000.193  000.193: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+308.032  001.006  001.006: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+308.352  000.102  000.102: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
+309.551  000.938  000.938: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+313.253  003.187  003.187: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+313.631  000.210  000.210: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+313.894  000.033  000.033: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+314.216  000.033  000.033: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+314.959  000.386  000.386: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+315.278  000.076  000.076: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
+315.514  004.862: loading packages
+317.840  000.303  000.303: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+318.042  000.069  000.069: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+318.245  000.087  000.087: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
+318.454  000.092  000.092: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+318.693  000.122  000.122: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+318.698  002.511: loading after plugins
+318.708  000.010: inits 3
+322.161  003.452: reading ShaDa
+328.728  000.082  000.082: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin/lua.vim
+330.599  000.056  000.056: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent/lua.vim
+336.089  000.696  000.696: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/lua.vim
+356.705  033.710: opening buffers
+360.086  003.381: BufEnter autocommands
+360.096  000.010: editing files in windows
+364.005  003.909: VimEnter autocommands
+364.009  000.004: UIEnter autocommands
+364.012  000.003: before starting main loop
+388.952  024.940: first screen update
+388.955  000.003: --- NVIM STARTED ---
 
 
 times in msec
  clock   self+sourced   self:  sourced script
  clock   elapsed:              other lines
 
-000.017  000.017: --- NVIM STARTING ---
-001.187  001.170: locale set
-002.328  001.142: inits 1
-002.369  000.041: window checked
-002.376  000.007: parsing arguments
-011.901  009.525: expanding arguments
-012.022  000.121: inits 2
-012.821  000.799: init highlight
-012.824  000.002: waiting for UI
-015.628  002.804: done waiting for UI
-015.653  000.025: init screen for UI
-015.691  000.039: init default mappings
-015.768  000.077: init default autocommands
-018.988  000.689  000.689: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
-019.710  000.248  000.248: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
-027.037  006.430  006.430: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
-260.097  240.111  233.681: sourcing /Users/yangshixin/.config/nvim/init.lua
-260.137  003.320: sourcing vimrc file(s)
-260.774  000.181  000.181: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
-268.493  000.153  000.153: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
-269.098  008.266  008.114: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
-270.047  000.215  000.215: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
-270.173  000.768  000.554: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
-272.345  000.322  000.322: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
-272.490  000.098  000.098: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
-272.680  000.131  000.131: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
-274.026  000.443  000.443: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
-274.166  001.448  001.004: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
-274.401  000.190  000.190: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
-274.837  000.385  000.385: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
-275.176  000.110  000.110: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
-275.184  000.300  000.190: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
-275.396  000.149  000.149: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
-275.502  000.046  000.046: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
-275.705  000.141  000.141: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
-275.880  000.124  000.124: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
-275.979  000.041  000.041: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
-276.212  000.181  000.181: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
-308.037  005.167  005.167: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
-308.693  032.330  027.163: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
-309.234  003.997: loading rtp plugins
-311.501  000.914  000.914: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/dashboard-nvim/plugin/dashboard.lua
-312.550  000.799  000.799: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/galaxyline.nvim/plugin/galaxyline.vim
-314.313  001.384  001.384: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
-314.965  000.334  000.334: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
-316.678  001.238  001.238: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
-317.072  000.226  000.226: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
-317.540  000.202  000.202: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
-321.125  003.196  003.196: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
-321.759  000.462  000.462: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
-322.135  000.130  000.130: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
-322.604  000.163  000.163: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
-323.537  000.563  000.563: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
-323.950  000.190  000.190: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
-324.276  005.241: loading packages
-325.716  000.894  000.894: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
-326.025  000.180  000.180: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
-326.479  000.326  000.326: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
-327.094  000.494  000.494: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
-328.294  001.064  001.064: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
-328.568  000.149  000.149: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/after/plugin/Comment.lua
-328.600  001.217: loading after plugins
-328.612  000.012: inits 3
-331.913  003.301: reading ShaDa
-335.375  003.462: opening buffers
-336.016  000.641: BufEnter autocommands
-336.019  000.004: editing files in windows
-350.179  014.159: VimEnter autocommands
-350.182  000.003: UIEnter autocommands
-350.901  000.383  000.383: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/provider/clipboard.vim
-350.911  000.346: before starting main loop
-358.297  007.386: first screen update
-358.299  000.002: --- NVIM STARTED ---
-
-
-times in msec
- clock   self+sourced   self:  sourced script
- clock   elapsed:              other lines
-
-000.014  000.014: --- NVIM STARTING ---
-001.418  001.404: locale set
-002.573  001.156: inits 1
-002.612  000.039: window checked
-002.842  000.230: parsing arguments
-012.598  009.756: expanding arguments
-012.684  000.086: inits 2
-013.407  000.723: init highlight
-013.409  000.002: waiting for UI
-016.312  002.903: done waiting for UI
-016.337  000.025: init screen for UI
-016.375  000.038: init default mappings
-016.458  000.083: init default autocommands
-019.537  000.531  000.531: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
-020.029  000.072  000.072: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
-027.686  006.888  006.888: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
-253.573  233.324  226.436: sourcing /Users/yangshixin/.config/nvim/init.lua
-253.623  003.238: sourcing vimrc file(s)
-254.168  000.046  000.046: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
-261.713  000.016  000.016: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
-262.341  008.115  008.098: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
-263.018  000.082  000.082: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
-263.151  000.506  000.424: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
-265.195  000.188  000.188: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
-265.254  000.014  000.014: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
-265.360  000.057  000.057: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
-266.461  000.246  000.246: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
-266.603  001.199  000.953: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
-266.806  000.161  000.161: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
-267.213  000.361  000.361: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
-267.449  000.014  000.014: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
-267.456  000.187  000.173: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
-267.588  000.086  000.086: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
-267.668  000.026  000.026: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
-267.833  000.116  000.116: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
-267.976  000.098  000.098: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
-268.054  000.028  000.028: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
-268.269  000.162  000.162: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
-298.366  004.137  004.137: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
-299.015  030.597  026.460: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
-299.516  003.946: loading rtp plugins
-301.289  000.557  000.557: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/dashboard-nvim/plugin/dashboard.lua
-301.931  000.425  000.425: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/galaxyline.nvim/plugin/galaxyline.vim
-303.303  001.012  001.012: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
-303.787  000.194  000.194: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
-305.429  001.161  001.161: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
-305.720  000.092  000.092: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
-306.217  000.062  000.062: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
-308.674  002.091  002.091: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
-309.005  000.170  000.170: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
-309.255  000.032  000.032: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
-309.565  000.034  000.034: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
-310.111  000.202  000.202: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
-310.402  000.076  000.076: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
-310.709  005.085: loading packages
-311.755  000.508  000.508: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
-311.934  000.060  000.060: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
-312.193  000.136  000.136: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
-312.523  000.213  000.213: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
-312.858  000.217  000.217: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
-314.255  001.280  001.280: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/after/plugin/Comment.lua
-314.291  001.167: loading after plugins
-314.301  000.011: inits 3
-317.535  003.234: reading ShaDa
-325.059  000.269  000.269: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/provider/pythonx.vim
-325.794  000.358  000.358: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/remote/host.vim
-325.885  002.649  002.023: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/provider/python3.vim
-326.238  003.555  000.906: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin/python.vim
-328.561  000.300  000.300: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent/python.vim
-334.499  000.720  000.720: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/python.vim
-374.114  052.004: opening buffers
-375.992  001.877: BufEnter autocommands
-375.997  000.005: editing files in windows
-378.924  002.927: VimEnter autocommands
-378.928  000.004: UIEnter autocommands
-379.568  000.253  000.253: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/autoload/provider/clipboard.vim
-379.578  000.397: before starting main loop
-420.695  041.117: first screen update
-420.698  000.003: --- NVIM STARTED ---
-
-
-times in msec
- clock   self+sourced   self:  sourced script
- clock   elapsed:              other lines
-
-000.013  000.013: --- NVIM STARTING ---
-001.195  001.182: locale set
-002.345  001.149: inits 1
-002.383  000.039: window checked
-002.611  000.228: parsing arguments
-012.142  009.531: expanding arguments
-012.239  000.097: inits 2
-012.996  000.757: init highlight
-012.998  000.002: waiting for UI
-016.134  003.136: done waiting for UI
-016.161  000.027: init screen for UI
-016.201  000.040: init default mappings
-016.287  000.085: init default autocommands
-019.465  000.680  000.680: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
-020.182  000.232  000.232: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
-029.906  008.250  008.250: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
-287.274  266.822  258.573: sourcing /Users/yangshixin/.config/nvim/init.lua
-287.318  003.297: sourcing vimrc file(s)
-287.973  000.196  000.196: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
-294.580  000.146  000.146: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
-295.146  007.113  006.968: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
-295.902  000.209  000.209: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
-296.035  000.748  000.538: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
-298.352  000.333  000.333: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
-298.557  000.145  000.145: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
-298.758  000.122  000.122: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
-300.170  000.440  000.440: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
-300.329  001.519  001.079: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
-300.580  000.199  000.199: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
-301.028  000.399  000.399: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
-301.401  000.115  000.115: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
-301.408  000.324  000.210: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
-301.580  000.119  000.119: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
-301.706  000.064  000.064: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
-301.910  000.148  000.148: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
-302.091  000.129  000.129: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
-302.194  000.046  000.046: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
-302.447  000.201  000.201: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
-337.959  002.058  002.058: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
-338.634  036.018  033.960: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
-339.143  004.002: loading rtp plugins
-340.704  000.275  000.275: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/plugin/Comment.lua
-343.262  002.191  002.191: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
-343.918  000.345  000.345: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
-346.470  002.095  002.095: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
-346.876  000.226  000.226: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
-347.416  000.297  000.297: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
-351.794  003.782  003.782: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
-353.174  001.205  001.205: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
-353.581  000.166  000.166: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
-354.034  000.162  000.162: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
-354.855  000.472  000.472: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
-355.298  000.209  000.209: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
-355.534  004.966: loading packages
-358.732  001.114  001.114: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
-359.081  000.210  000.210: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
-359.401  000.197  000.197: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
-359.749  000.212  000.212: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
-360.898  001.024  001.024: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
-360.966  002.675: loading after plugins
-360.977  000.011: inits 3
-364.800  003.824: reading ShaDa
-371.754  000.227  000.227: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin/lua.vim
-373.783  000.195  000.195: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent/lua.vim
-379.408  000.894  000.894: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/lua.vim
-395.440  029.323: opening buffers
-398.002  002.562: BufEnter autocommands
-398.008  000.006: editing files in windows
-399.506  001.499: VimEnter autocommands
-399.509  000.003: UIEnter autocommands
-399.512  000.002: before starting main loop
-423.748  024.236: first screen update
-423.752  000.004: --- NVIM STARTED ---
+000.012  000.012: --- NVIM STARTING ---
+001.154  001.141: locale set
+002.299  001.146: inits 1
+002.342  000.043: window checked
+002.568  000.226: parsing arguments
+012.247  009.679: expanding arguments
+012.369  000.121: inits 2
+013.136  000.767: init highlight
+013.138  000.002: waiting for UI
+016.131  002.993: done waiting for UI
+016.157  000.027: init screen for UI
+016.196  000.039: init default mappings
+016.272  000.076: init default autocommands
+019.562  000.765  000.765: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin.vim
+020.257  000.250  000.250: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent.vim
+029.831  008.157  008.157: sourcing /Users/yangshixin/.config/nvim/colors/gruvbox.vim
+260.635  240.106  231.949: sourcing /Users/yangshixin/.config/nvim/init.lua
+260.682  003.289: sourcing vimrc file(s)
+261.397  000.235  000.235: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.lua
+269.517  000.152  000.152: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/ftdetect/snippets.vim
+270.082  008.612  008.460: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/filetype.vim
+270.994  000.205  000.205: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/synload.vim
+271.166  000.798  000.593: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/syntax.vim
+273.296  000.311  000.311: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/gzip.vim
+273.447  000.110  000.110: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/health.vim
+273.651  000.157  000.157: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/man.vim
+275.008  000.426  000.426: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/pack/dist/opt/matchit/plugin/matchit.vim
+275.156  001.463  001.038: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchit.vim
+275.382  000.187  000.187: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/matchparen.vim
+275.812  000.386  000.386: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/netrwPlugin.vim
+276.195  000.109  000.109: sourcing /Users/yangshixin/.local/share/nvim/rplugin.vim
+276.202  000.336  000.227: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/rplugin.vim
+276.372  000.119  000.119: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/shada.vim
+276.488  000.060  000.060: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/spellfile.vim
+276.676  000.141  000.141: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tarPlugin.vim
+276.848  000.124  000.124: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tohtml.vim
+276.949  000.049  000.049: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/tutor.vim
+277.188  000.190  000.190: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/plugin/zipPlugin.vim
+315.005  004.530  004.530: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/opt/nvim-treesitter-textobjects/plugin/nvim-treesitter-textobjects.vim
+315.673  038.331  033.800: sourcing /Users/yangshixin/.config/nvim/plugin/packer_compiled.lua
+316.162  003.871: loading rtp plugins
+317.720  000.289  000.289: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/Comment.nvim/plugin/Comment.lua
+318.832  000.737  000.737: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim/plugin/indent_blankline.vim
+319.516  000.383  000.383: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/LuaSnip/plugin/luasnip.vim
+322.040  002.080  002.080: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-cmp/plugin/cmp.lua
+322.547  000.211  000.211: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer/plugin/nvim-lsp-installer.vim
+323.133  000.327  000.327: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig/plugin/lspconfig.vim
+327.160  003.433  003.433: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-treesitter/plugin/nvim-treesitter.lua
+328.695  001.348  001.348: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring/plugin/ts_context_commentstring.vim
+329.093  000.170  000.170: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons/plugin/nvim-web-devicons.vim
+329.564  000.166  000.166: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/plenary.nvim/plugin/plenary.vim
+330.425  000.503  000.503: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/telescope.nvim/plugin/telescope.lua
+330.881  000.214  000.214: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/vim-bbye/plugin/bbye.vim
+331.121  005.099: loading packages
+334.394  001.216  001.216: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-buffer/after/plugin/cmp_buffer.lua
+334.774  000.239  000.239: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp/after/plugin/cmp_nvim_lsp.lua
+335.095  000.195  000.195: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-nvim-lua/after/plugin/cmp_nvim_lua.lua
+335.432  000.205  000.205: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp-path/after/plugin/cmp_path.lua
+335.783  000.223  000.223: sourcing /Users/yangshixin/.local/share/nvim/site/pack/packer/start/cmp_luasnip/after/plugin/cmp_luasnip.lua
+335.791  002.593: loading after plugins
+335.803  000.011: inits 3
+339.222  003.419: reading ShaDa
+346.663  000.240  000.240: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/ftplugin/lua.vim
+348.681  000.190  000.190: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/indent/lua.vim
+356.036  000.891  000.891: sourcing /usr/local/Cellar/neovim/0.7.0/share/nvim/runtime/syntax/lua.vim
+373.072  032.529: opening buffers
+376.122  003.050: BufEnter autocommands
+376.126  000.004: editing files in windows
+379.162  003.036: VimEnter autocommands
+379.169  000.007: UIEnter autocommands
+379.174  000.005: before starting main loop
+401.350  022.176: first screen update
+401.353  000.003: --- NVIM STARTED ---
