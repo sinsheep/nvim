@@ -1,5 +1,5 @@
 local keymap = require('core.keymap')
-local nmap, imap, cmap, xmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap
+local nmap, imap, cmap, xmap, vmap = keymap.nmap, keymap.imap, keymap.cmap, keymap.xmap, keymap.vmap
 local silent, noremap = keymap.silent, keymap.noremap
 local opts = keymap.new_opts
 local cmd = keymap.cmd
@@ -28,12 +28,17 @@ nmap({
   { ']b', cmd('bn'), opts(noremap) },
   { '[b', cmd('bp'), opts(noremap) },
   -- remove trailing white space
-  { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
+  -- { '<Leader>t', cmd('TrimTrailingWhitespace'), opts(noremap) },
   -- window jump
   { '<C-h>', '<C-w>h', opts(noremap) },
   { '<C-l>', '<C-w>l', opts(noremap) },
   { '<C-j>', '<C-w>j', opts(noremap) },
   { '<C-k>', '<C-w>k', opts(noremap) },
+  -- split windows
+  {'sh', ':set splitright<CR>:vsplit<CR>', opts(noremap)},
+  {'sl', ':set nosplitright<CR>:vsplit<CR>', opts(noremap)},
+  {'sj', ':set nosplitbelow<CR>:split<CR>', opts(noremap)},
+  {'sk', ':set splitbelow<CR>:split<CR>', opts(noremap)},
 })
 
 imap({
@@ -44,3 +49,7 @@ imap({
 
 -- commandline remap
 cmap({ '<C-b>', '<Left>', opts(noremap) })
+
+vmap(
+    {'Y','"+y',opts(noremap)}
+)

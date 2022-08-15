@@ -29,7 +29,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-local servers = {"pyright","jsonls","sumneko_lua"}
+local servers = {"pyright","jsonls","sumneko_lua", "gopls","zk"}
 for _, lsp in ipairs(servers) do
     local opts = {
         on_attach = on_attach,

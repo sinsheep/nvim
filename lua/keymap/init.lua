@@ -19,13 +19,16 @@ nmap({
   { '<Leader>fg', cmd('Telescope live_grep'), opts(noremap, silent) },
   { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
   { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
+  { '<leader>fo', cmd('Telescope oldfiles'), opts(noremap, silent)},
   -- toggleterm
   { '<leader>lg', cmd('lua _LAZYGIT_TOGGLE()'), opts(noremap, silent)},
   { '<leader>py', cmd('lua _PYTHON_TOGGLE()'), opts(noremap, silent)},
 
 
   -- diagnostic
-  {'<leader>g', vim.diagnostic.open_float, opts(noremap,silent)}
+  {'<leader>g', vim.diagnostic.open_float, opts(noremap,silent)},
+  -- code_runnign
 
+  {'<leader>R', cmd("RunCode"), opts(noremap, silent)}
 })
 
