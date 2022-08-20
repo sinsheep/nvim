@@ -143,4 +143,3 @@ cmp.setup {
 local bufferline = require("bufferline")
 bufferline.setup {}
 
-

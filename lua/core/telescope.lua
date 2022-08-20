@@ -1,17 +1,12 @@
-local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+local telescope = require("telescope")
 
 local actions = require "telescope.actions"
 
 telescope.setup {
   defaults = {
-
     prompt_prefix = " ",
     selection_caret = " ",
     path_display = { "smart" },
-
     mappings = {
       i = {
         ["<C-n>"] = actions.cycle_history_next,
@@ -94,3 +89,4 @@ telescope.setup {
     -- please take a look at the readme of the extension you want to configure
   },
 }
+require('telescope').load_extension('projects')

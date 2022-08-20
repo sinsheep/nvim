@@ -38,6 +38,28 @@ for k, v in pairs(options) do
     vim.opt[k] = v
 end
 
+local g = vim.g
+local disabled_built_ins = {
+  "2html_plugin",
+  "getscript",
+  "getscriptPlugin",
+  "gzip",
+  "logipat",
+  "netrw",
+  "netrwPlugin",
+  "netrwSettings",
+  "netrwFileHandlers",
+  "matchit",
+  "matchparen",
+  "tar",
+  "tarPlugin",
+  "rrhelper",
+  "vimball",
+  "vimballPlugin",
+  "zip",
+  "zipPlugin",
+}
 
-vim.g.python_host_prog = '/usr/bin/python'
-vim.g.python3_host_prog = '/usr/local/bin/python3'
+for _, plugin in pairs(disabled_built_ins) do
+  g["loaded_" .. plugin] = 1
+end

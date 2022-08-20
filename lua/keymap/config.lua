@@ -17,7 +17,7 @@ nmap({
   {'s', '<nop>', opts(noremap)},
   {'S', cmd('write'), opts(noremap)},
   {'Q', cmd('q'), opts(noremap)},
-  {'<leader>w',cmd('Bdelete'), opts(noremap, silent)},
+  {'<leader>d',cmd('Bdelete'), opts(noremap, silent)},
   -- close buffer
   { '<C-x>k', cmd('bdelete'), opts(noremap, silent) },
   -- save

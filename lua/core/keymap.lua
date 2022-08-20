@@ -80,7 +80,7 @@ local keymap_set = function(mode, tbl)
   })
   local len = #tbl
   if len < 2 then
-    vim.notify('keymap must has rhs')
+    vim.notify('keymap must has rhs' .. mode)
     return
   end
 

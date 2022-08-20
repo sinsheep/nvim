@@ -26,7 +26,7 @@ end
 -- ]])
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require1, "packer")
+local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     return
 end
@@ -35,7 +35,7 @@ end
 packer.init({
     display = {
         open_fn = function()
-            return require1("packer.util").float({ border = "rounded" })
+            return require("packer.util").float({ border = "rounded" })
         end,
     },
 })
@@ -53,71 +53,81 @@ return packer.startup(function(use)
     use({
         "kylechui/nvim-surround",
         config = function()
-            require1("nvim-surround").setup({
+            require("nvim-surround").setup({
             })
         end
     })
-    use({ "kyazdani42/nvim-tree.lua" })
+    use({ "kyazdani42/nvim-tree.lua"})
     use({ "akinsho/bufferline.nvim" })
     use({ "nvim-lualine/lualine.nvim" })
     -- use({
-        --     'glepnir/galaxyline.nvim',
-        --     branch = 'main',
-        --     requires = 'kyazdani42/nvim-web-devicons',
-        -- })
-        use({ "akinsho/toggleterm.nvim" })
-        use({ "moll/vim-bbye" })
-        use({ "ahmedkhalf/project.nvim" })
-        use({ "lewis6991/impatient.nvim" ,
-        })
-        use({ "lukas-reineke/indent-blankline.nvim" })
-        use {
-            'goolord/alpha-nvim',
-            config = function ()
-                require1'alpha'.setup(require1'alpha.themes.dashboard'.config)
-            end
-        }
-        -- use("folke/which-key.nvim")
-
-
-        -- cmp plugins
-        use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
-        use({ "hrsh7th/cmp-buffer" }) -- buffer completions
-        use({ "hrsh7th/cmp-path" }) -- path completions
-        use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
-        use({ "hrsh7th/cmp-nvim-lsp" })
-        use({ "hrsh7th/cmp-nvim-lua" })
-
-        -- snippets
-        use({ "L3MON4D3/LuaSnip" }) --snippet engine
-        use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
-
-        -- LSP
-        use({ "neovim/nvim-lspconfig" }) -- enable LSP
-        use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
-        use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
-        use({
-            "glepnir/lspsaga.nvim",
-            branch = "main",
-        })
-
-        -- Telescope
-        use({ "nvim-telescope/telescope.nvim" })
-
-        -- Treesitter
-        use({
-            "nvim-treesitter/nvim-treesitter",
-            config = conf.nvim_treesitter
-        })
-        use({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
-
-        -- Git
-        use({ "lewis6991/gitsigns.nvim", config = conf.gitsigns })
-
-        use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
-        -- Automatically set up your configuration after cloning packer.nvim
-        -- Put this at the end after all plugins
-        if PACKER_BOOTSTRAP then
-            require1("packer").sync()
+    --     'glepnir/galaxyline.nvim',
+    --     branch = 'main',
+    --     requires = 'kyazdani42/nvim-web-devicons',
+    -- })
+    use({ "moll/vim-bbye" ,cmd='Bdelete'})
+    use({ "ahmedkhalf/project.nvim",
+        config=function ()
+            require("project_nvim").setup {}
+    end})
+    use({ "lewis6991/impatient.nvim"})
+    use({ "lukas-reineke/indent-blankline.nvim" })
+    use {
+        'goolord/alpha-nvim',
+        config = function ()
+            require'alpha'.setup(require'alpha.themes.dashboard'.config)
         end
-    end)
+    }
+    -- use("folke/which-key.nvim")
+
+
+    -- cmp plugins
+    use({ "hrsh7th/nvim-cmp"}) -- The completion plugin
+    use({ "hrsh7th/cmp-buffer" }) -- buffer completions
+    use({ "hrsh7th/cmp-path" }) -- path completions
+    use({ "saadparwaiz1/cmp_luasnip"}) -- snippet completions
+    use({ "hrsh7th/cmp-nvim-lsp"})
+    use({ "hrsh7th/cmp-nvim-lua"})
+
+    -- snippets
+    use({ "L3MON4D3/LuaSnip" }) --snippet engine
+    use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
+
+    -- LSP
+    use({ "neovim/nvim-lspconfig" }) -- enable LSP
+    -- use({ "williamboman/nvim-lsp-installer" }) -- simple to use language server installer
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    }
+    use({ "jose-elias-alvarez/null-ls.nvim" }) -- for formatters and linters
+    use({
+        "glepnir/lspsaga.nvim",
+        branch = "main",
+    })
+
+    use { "ellisonleao/gruvbox.nvim" }
+    -- Telescope
+    use({ "nvim-telescope/telescope.nvim"})
+
+    -- Treesitter
+    use({
+        "nvim-treesitter/nvim-treesitter",
+        config = conf.nvim_treesitter
+    })
+    use({ 'nvim-treesitter/nvim-treesitter-textobjects', after = 'nvim-treesitter' })
+
+    -- vim-dap
+    -- use({"mfussenegger/nvim-dap"})
+    -- use { "rcarriga/nvim-dap-ui"}
+
+    -- Git
+    use({"lewis6991/gitsigns.nvim"})
+
+    use { 'CRAG666/code_runner.nvim', requires = 'nvim-lua/plenary.nvim' }
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if PACKER_BOOTSTRAP then
+        require("packer").sync()
+    end
+end)
