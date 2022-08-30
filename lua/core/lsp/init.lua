@@ -32,7 +32,7 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-local servers = {"jsonls","sumneko_lua", "gopls","zk"}
+local servers = {"jsonls","sumneko_lua", "gopls"}
 for _, lsp in ipairs(servers) do
     local opts = {
         on_attach = on_attach,
@@ -61,13 +61,21 @@ local function get_python_path(workspace)
     end
 
     -- Fallback to system Python.
-    return exepath('python3') or exepath('python') or 'python'
+    return 'python3'
+    -- return exepath('python3') or exepath('python') or 'python'
 end
 
 lspconfig.pyright.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    before_init = function(_, config)
-        config.settings.python.pythonPath = get_python_path(config.root_dir)
-    end
+    -- settings = {
+    --     python={
+    --         analysis = {
+    --             autoSearchPaths= true,
+    --             useLibraryCodeForTypes = false,
+    --             typeCheckingMode = 'off',
+    --         },
+    --         pythonPath = get_python_path(vim.lsp.buf.list_workspace_folders())
+    --     },
+    -- },
 })

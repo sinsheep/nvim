@@ -12,10 +12,10 @@ nvim_tree.setup({
     update_root = true
   },
 })
+
 require('nvim-autopairs').setup{}
 require('impatient').enable_profile()
 require("indent_blankline").setup {
     show_current_context = true,
     show_current_context_start = true,
 }
-

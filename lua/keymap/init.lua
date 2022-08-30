@@ -38,7 +38,24 @@ nmap({
     {"gh", "<cmd>Lspsaga lsp_finder<CR>", opts(noremap,silent) },
     {"gp", "<cmd>Lspsaga preview_definition<CR>",opts(noremap,silent)},
     {"<leader>cd", cmd('Lspsaga show_line_diagnostics'),opts(noremap, silent)},
-    {'<leader>tg', cmd('LSoutlineToggle'), opts(noremap, silent)}
+    {'<leader>tg', cmd('LSoutlineToggle'), opts(noremap, silent)},
+    -- hop
+    {"<leader>jw", cmd("HopWord"), opts(noremap,silent)},
+    {"ss", cmd("HopChar1"), opts(noremap,silent)},
+
+    -- Trouble
+    {"<leader>xx", cmd("Trouble"),opts(noremap,silent)},
+
+    {"<leader>xw", cmd("Trouble workspace_diagnostics"), opts(noremap,silent)},
+    {"<leader>xd", cmd("Trouble document_diagnostics"), opts(noremap,silent)},
+    {"<leader>xl", cmd("Trouble loclist"), opts(noremap,silent)},
+    {"<leader>xq", cmd("Trouble quickfix"), opts(noremap,silent)},
 })
 
-vmap({"<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts(noremap,silent)})
+vmap({
+    {"<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts(noremap,silent)},
+    {"f",cmd("lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })"), opts(noremap,silent)},
+    {"F",cmd("lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })"), opts(noremap,silent)},
+    {'t',cmd("lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }"),opts(noremap,silent)},
+    {'T',cmd("lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = -1 }"),opts(noremap,silent)}
+})
