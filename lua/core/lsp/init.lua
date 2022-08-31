@@ -1,18 +1,15 @@
 require("core.lsp.cmp")
--- require('nvim-lsp-installer').setup{}
+require('nvim-lsp-installer').setup{}
 local util = require('lspconfig/util')
-require("mason").setup()
-require("mason-lspconfig").setup()
 local path = util.path
 local lspconfig = require('lspconfig')
 
 local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
-
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
     -- vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -26,13 +23,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<leader>D', vim.lsp.buf.type_definition, bufopts)
     -- vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '\f', vim.lsp.buf.formatting, bufopts)
+    vim.keymap.set('n', '<leader>fa', vim.lsp.buf.formatting, bufopts)
 end
 
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
-local servers = {"jsonls","sumneko_lua", "gopls"}
+local servers = { "jsonls", "sumneko_lua", "gopls", "zk" }
 for _, lsp in ipairs(servers) do
     local opts = {
         on_attach = on_attach,
@@ -53,7 +50,7 @@ local function get_python_path(workspace)
     end
 
     -- Find and use virtualenv in workspace directory.
-    for _, pattern in ipairs({'*', '.*'}) do
+    for _, pattern in ipairs({ '*', '.*' }) do
         local match = vim.fn.glob(path.join(workspace, pattern, 'pyvenv.cfg'))
         if match ~= '' then
             return path.join(path.dirname(match), 'bin', 'python')
@@ -68,14 +65,17 @@ end
 lspconfig.pyright.setup({
     on_attach = on_attach,
     capabilities = capabilities,
-    -- settings = {
-    --     python={
-    --         analysis = {
-    --             autoSearchPaths= true,
-    --             useLibraryCodeForTypes = false,
-    --             typeCheckingMode = 'off',
-    --         },
-    --         pythonPath = get_python_path(vim.lsp.buf.list_workspace_folders())
-    --     },
-    -- },
+    settings = {
+        python = {
+            analysis = {
+                autoSearchPaths = true,
+                useLibraryCodeForTypes = false,
+                typeCheckingMode = 'off',
+            },
+            pythonPath = get_python_path(vim.lsp.buf.list_workspace_folders())
+        },
+    },
+    -- before_init = function(_, config)
+    --     config.settings.python.pythonPath = get_python_path(config.root_dir)
+    -- end,
 })
