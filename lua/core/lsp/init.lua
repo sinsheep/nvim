@@ -25,6 +25,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<leader>fa', vim.lsp.buf.formatting, bufopts)
 end
+vim.lsp.set_log_level("debug")
 
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()

@@ -18,8 +18,8 @@ nmap({
     { '<Leader>fb', cmd('Telescope buffers'), opts(noremap, silent) },
     { '<Leader>fg', cmd('Telescope live_grep'), opts(noremap, silent) },
     { '<Leader>ff', cmd('Telescope find_files'), opts(noremap, silent) },
-    { '<Leader>fh', cmd('Telescope help_tags'), opts(noremap, silent) },
-    { '<leader>fo', cmd('Telescope oldfiles'), opts(noremap, silent)},
+    { '<Leader>fo', cmd('Telescope help_tags'), opts(noremap, silent) },
+    { '<leader>fh', cmd('Telescope oldfiles'), opts(noremap, silent)},
     -- toggleterm
     { '<leader>lg', cmd('lua _LAZYGIT_TOGGLE()'), opts(noremap, silent)},
     { '<leader>py', cmd('lua _PYTHON_TOGGLE()'), opts(noremap, silent)},
