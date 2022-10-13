@@ -28,8 +28,7 @@ end
 vim.lsp.set_log_level("debug")
 
 
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require("cmp_nvim_lsp").update_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 local servers = { "jsonls", "sumneko_lua", "gopls", "zk" }
 for _, lsp in ipairs(servers) do
     local opts = {
@@ -59,7 +58,7 @@ local function get_python_path(workspace)
     end
 
     -- Fallback to system Python.
-    return 'python3'
+    return "python3"
     -- return exepath('python3') or exepath('python') or 'python'
 end
 
